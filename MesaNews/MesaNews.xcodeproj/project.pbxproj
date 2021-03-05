@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19084138EC971E273563AB4A /* Pods_MesaNewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E509B11E752B65259A15C0A /* Pods_MesaNewsTests.framework */; };
+		67F687968E092CB3BF55907E /* Pods_MesaNews_MesaNewsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3E78165AE04FF4372F8482 /* Pods_MesaNews_MesaNewsUITests.framework */; };
+		6E7A93A616652EBB7EADCC3D /* Pods_MesaNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96707F7929D0CE03A344BDA6 /* Pods_MesaNews.framework */; };
 		CB32004D25F1A47400766C62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32004C25F1A47400766C62 /* AppDelegate.swift */; };
 		CB32004F25F1A47400766C62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32004E25F1A47400766C62 /* SceneDelegate.swift */; };
 		CB32005125F1A47400766C62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32005025F1A47400766C62 /* ViewController.swift */; };
@@ -35,6 +38,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E509B11E752B65259A15C0A /* Pods_MesaNewsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MesaNewsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3818BEEE3A40A929347CC88F /* Pods-MesaNews-MesaNewsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MesaNews-MesaNewsUITests.release.xcconfig"; path = "Target Support Files/Pods-MesaNews-MesaNewsUITests/Pods-MesaNews-MesaNewsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5BB0D8255C61FA3B8614FD34 /* Pods-MesaNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MesaNews.release.xcconfig"; path = "Target Support Files/Pods-MesaNews/Pods-MesaNews.release.xcconfig"; sourceTree = "<group>"; };
+		81AAA0F72326401A6FE2C05F /* Pods-MesaNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MesaNews.debug.xcconfig"; path = "Target Support Files/Pods-MesaNews/Pods-MesaNews.debug.xcconfig"; sourceTree = "<group>"; };
+		95DD87337269E2976CCDE6D6 /* Pods-MesaNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MesaNewsTests.debug.xcconfig"; path = "Target Support Files/Pods-MesaNewsTests/Pods-MesaNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		96707F7929D0CE03A344BDA6 /* Pods_MesaNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MesaNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB3E78165AE04FF4372F8482 /* Pods_MesaNews_MesaNewsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MesaNews_MesaNewsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C337EA276386560C0B4402EB /* Pods-MesaNews-MesaNewsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MesaNews-MesaNewsUITests.debug.xcconfig"; path = "Target Support Files/Pods-MesaNews-MesaNewsUITests/Pods-MesaNews-MesaNewsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CB32004925F1A47400766C62 /* MesaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MesaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB32004C25F1A47400766C62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB32004E25F1A47400766C62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +60,7 @@
 		CB32006A25F1A47500766C62 /* MesaNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MesaNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB32006E25F1A47500766C62 /* MesaNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesaNewsUITests.swift; sourceTree = "<group>"; };
 		CB32007025F1A47500766C62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9D93B4AADB22E36110E54E8 /* Pods-MesaNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MesaNewsTests.release.xcconfig"; path = "Target Support Files/Pods-MesaNewsTests/Pods-MesaNewsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E7A93A616652EBB7EADCC3D /* Pods_MesaNews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19084138EC971E273563AB4A /* Pods_MesaNewsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67F687968E092CB3BF55907E /* Pods_MesaNews_MesaNewsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1403C8E88602DC610D709846 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				81AAA0F72326401A6FE2C05F /* Pods-MesaNews.debug.xcconfig */,
+				5BB0D8255C61FA3B8614FD34 /* Pods-MesaNews.release.xcconfig */,
+				C337EA276386560C0B4402EB /* Pods-MesaNews-MesaNewsUITests.debug.xcconfig */,
+				3818BEEE3A40A929347CC88F /* Pods-MesaNews-MesaNewsUITests.release.xcconfig */,
+				95DD87337269E2976CCDE6D6 /* Pods-MesaNewsTests.debug.xcconfig */,
+				E9D93B4AADB22E36110E54E8 /* Pods-MesaNewsTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6F834754490A73C68B42E4DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				96707F7929D0CE03A344BDA6 /* Pods_MesaNews.framework */,
+				BB3E78165AE04FF4372F8482 /* Pods_MesaNews_MesaNewsUITests.framework */,
+				1E509B11E752B65259A15C0A /* Pods_MesaNewsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CB32004025F1A47400766C62 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +122,8 @@
 				CB32006225F1A47500766C62 /* MesaNewsTests */,
 				CB32006D25F1A47500766C62 /* MesaNewsUITests */,
 				CB32004A25F1A47400766C62 /* Products */,
+				1403C8E88602DC610D709846 /* Pods */,
+				6F834754490A73C68B42E4DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB32007325F1A47500766C62 /* Build configuration list for PBXNativeTarget "MesaNews" */;
 			buildPhases = (
+				EDA3A7D2EA9BC1E95B7E48D4 /* [CP] Check Pods Manifest.lock */,
 				CB32004525F1A47400766C62 /* Sources */,
 				CB32004625F1A47400766C62 /* Frameworks */,
 				CB32004725F1A47400766C62 /* Resources */,
+				23B18C65364F9D7295D77EA3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB32007625F1A47500766C62 /* Build configuration list for PBXNativeTarget "MesaNewsTests" */;
 			buildPhases = (
+				10BA441912D45AE751D0789D /* [CP] Check Pods Manifest.lock */,
 				CB32005B25F1A47500766C62 /* Sources */,
 				CB32005C25F1A47500766C62 /* Frameworks */,
 				CB32005D25F1A47500766C62 /* Resources */,
@@ -170,9 +214,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CB32007925F1A47500766C62 /* Build configuration list for PBXNativeTarget "MesaNewsUITests" */;
 			buildPhases = (
+				ECCD41A9955E8D2B16E71EBA /* [CP] Check Pods Manifest.lock */,
 				CB32006625F1A47500766C62 /* Sources */,
 				CB32006725F1A47500766C62 /* Frameworks */,
 				CB32006825F1A47500766C62 /* Resources */,
+				DD023102A3D9A28978F1A443 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +298,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		10BA441912D45AE751D0789D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MesaNewsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		23B18C65364F9D7295D77EA3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MesaNews/Pods-MesaNews-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MesaNews/Pods-MesaNews-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MesaNews/Pods-MesaNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD023102A3D9A28978F1A443 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MesaNews-MesaNewsUITests/Pods-MesaNews-MesaNewsUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MesaNews-MesaNewsUITests/Pods-MesaNews-MesaNewsUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MesaNews-MesaNewsUITests/Pods-MesaNews-MesaNewsUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECCD41A9955E8D2B16E71EBA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MesaNews-MesaNewsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EDA3A7D2EA9BC1E95B7E48D4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MesaNews-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CB32004525F1A47400766C62 /* Sources */ = {
@@ -433,6 +582,7 @@
 		};
 		CB32007425F1A47500766C62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81AAA0F72326401A6FE2C05F /* Pods-MesaNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -451,6 +601,7 @@
 		};
 		CB32007525F1A47500766C62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5BB0D8255C61FA3B8614FD34 /* Pods-MesaNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -469,6 +620,7 @@
 		};
 		CB32007725F1A47500766C62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95DD87337269E2976CCDE6D6 /* Pods-MesaNewsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +642,7 @@
 		};
 		CB32007825F1A47500766C62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9D93B4AADB22E36110E54E8 /* Pods-MesaNewsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -511,6 +664,7 @@
 		};
 		CB32007A25F1A47500766C62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C337EA276386560C0B4402EB /* Pods-MesaNews-MesaNewsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +684,7 @@
 		};
 		CB32007B25F1A47500766C62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3818BEEE3A40A929347CC88F /* Pods-MesaNews-MesaNewsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
