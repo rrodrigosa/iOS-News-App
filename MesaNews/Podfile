@@ -6,6 +6,8 @@ target 'MesaNews' do
   use_frameworks!
 
   # Pods for MesaNews
+  pod 'Alamofire', '~> 5.2'
+  pod 'SwiftLint'
 
   target 'MesaNewsTests' do
     inherit! :search_paths
