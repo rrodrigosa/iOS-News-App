@@ -18,6 +18,7 @@
 		CB32005925F1A47400766C62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB32005725F1A47400766C62 /* LaunchScreen.storyboard */; };
 		CB32006425F1A47500766C62 /* MesaNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32006325F1A47500766C62 /* MesaNewsTests.swift */; };
 		CB32006F25F1A47500766C62 /* MesaNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32006E25F1A47500766C62 /* MesaNewsUITests.swift */; };
+		CB78B34525F6E34F00455A14 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB78B34425F6E34F00455A14 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		CB32006A25F1A47500766C62 /* MesaNewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MesaNewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB32006E25F1A47500766C62 /* MesaNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesaNewsUITests.swift; sourceTree = "<group>"; };
 		CB32007025F1A47500766C62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB78B34425F6E34F00455A14 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E9D93B4AADB22E36110E54E8 /* Pods-MesaNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MesaNewsTests.release.xcconfig"; path = "Target Support Files/Pods-MesaNewsTests/Pods-MesaNewsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +183,7 @@
 		CB78B33F25F6E05F00455A14 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CB78B34425F6E34F00455A14 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB78B34525F6E34F00455A14 /* User.swift in Sources */,
 				CB32005125F1A47400766C62 /* ViewController.swift in Sources */,
 				CB32004D25F1A47400766C62 /* AppDelegate.swift in Sources */,
 				CB32004F25F1A47400766C62 /* SceneDelegate.swift in Sources */,
