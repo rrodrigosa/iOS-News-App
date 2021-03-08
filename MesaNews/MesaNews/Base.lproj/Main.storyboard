@@ -168,7 +168,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="n1Y-xU-lhb">
-                        <barButtonItem key="rightBarButtonItem" title="Favorite" image="heart.fill" catalog="system" id="BaC-ln-ZwK"/>
+                        <barButtonItem key="rightBarButtonItem" title="Favorite" image="heart" catalog="system" id="BaC-ln-ZwK"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FRr-yy-9jg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -333,7 +333,6 @@
     </scenes>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
-        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
