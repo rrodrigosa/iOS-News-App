@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -101,7 +101,6 @@
 				95DD87337269E2976CCDE6D6 /* Pods-MesaNewsTests.debug.xcconfig */,
 				E9D93B4AADB22E36110E54E8 /* Pods-MesaNewsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -140,6 +139,9 @@
 		CB32004B25F1A47400766C62 /* MesaNews */ = {
 			isa = PBXGroup;
 			children = (
+				CB78B34025F6E06A00455A14 /* Presenter */,
+				CB78B33F25F6E05F00455A14 /* Model */,
+				CB78B33625F6D83000455A14 /* View */,
 				CB32004C25F1A47400766C62 /* AppDelegate.swift */,
 				CB32004E25F1A47400766C62 /* SceneDelegate.swift */,
 				CB32005025F1A47400766C62 /* ViewController.swift */,
@@ -167,6 +169,27 @@
 				CB32007025F1A47500766C62 /* Info.plist */,
 			);
 			path = MesaNewsUITests;
+			sourceTree = "<group>";
+		};
+		CB78B33625F6D83000455A14 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CB78B33F25F6E05F00455A14 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CB78B34025F6E06A00455A14 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
