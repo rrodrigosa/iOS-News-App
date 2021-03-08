@@ -142,6 +142,40 @@
             <point key="canvasLocation" x="1070" y="543"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="UtR-jg-Kvl">
+            <objects>
+                <viewController id="6Kf-0k-9zy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FTs-bB-ALz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hU8-MY-bvP">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6qQ-Tf-qZm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hU8-MY-bvP" firstAttribute="top" secondItem="6qQ-Tf-qZm" secondAttribute="top" id="3hy-eT-ai4"/>
+                            <constraint firstItem="hU8-MY-bvP" firstAttribute="leading" secondItem="6qQ-Tf-qZm" secondAttribute="leading" id="UTw-Tg-eLb"/>
+                            <constraint firstItem="hU8-MY-bvP" firstAttribute="bottom" secondItem="6qQ-Tf-qZm" secondAttribute="bottom" id="YaQ-JF-eDU"/>
+                            <constraint firstItem="hU8-MY-bvP" firstAttribute="trailing" secondItem="6qQ-Tf-qZm" secondAttribute="trailing" id="bpN-bT-VHu"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="n1Y-xU-lhb">
+                        <barButtonItem key="rightBarButtonItem" title="Favorite" image="heart.fill" catalog="system" id="BaC-ln-ZwK"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FRr-yy-9jg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1997" y="-119"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="p9O-Ll-Ddy">
             <objects>
                 <viewController id="Omx-EF-FmP" sceneMemberID="viewController">
@@ -203,7 +237,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="KVf-4v-NOx" kind="show" id="cyb-u6-Z1o"/>
+                                            <segue destination="6Kf-0k-9zy" kind="show" id="ACv-Lu-pge"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -233,7 +267,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pyc-vK-6YA">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PdF-oz-LsV" userLabel="ContentView">
                                         <rect key="frame" x="8" y="8" width="398" height="474"/>
@@ -294,11 +328,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mmu-ub-2jp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2034.7826086956522" y="-119.19642857142857"/>
+            <point key="canvasLocation" x="739" y="-1069"/>
         </scene>
     </scenes>
     <resources>
         <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
