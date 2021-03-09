@@ -13,6 +13,9 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
     
+    let newsFeedIdentifier = "NewsFeedIdentifier"
+    let registerIdentifier = "RegisterIdentifier"
+    
     let mesa = MesaAPIService()
     
     override func viewDidLoad() {
@@ -23,6 +26,18 @@ class AuthViewController: UIViewController {
             (data: APIAuthDataSet?, error: String?) in
             print("rdsa - token: \(String(describing: data?.token))")
             
+        }
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // add another condition? if user has token, allow navigation
+        if  segue.identifier == newsFeedIdentifier {
+            let destination = segue.destination as? NewsFeedViewController
+            print("news feed interface")
+        } else if segue.identifier == registerIdentifier {
+            let destination = segue.destination as? RegisterViewController
+            print("register interface")
         }
     }
 

@@ -75,7 +75,7 @@
                                                 </constraints>
                                                 <state key="normal" title="Login"/>
                                                 <connections>
-                                                    <segue destination="Omx-EF-FmP" kind="show" id="b48-Z1-oeW"/>
+                                                    <segue destination="Omx-EF-FmP" kind="show" identifier="NewsFeedIdentifier" id="b48-Z1-oeW"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -101,7 +101,7 @@
                                                         <rect key="frame" x="165" y="0.0" width="52" height="30"/>
                                                         <state key="normal" title="Sign up"/>
                                                         <connections>
-                                                            <segue destination="dz7-SR-1fd" kind="show" id="Ic5-Af-zLJ"/>
+                                                            <segue destination="dz7-SR-1fd" kind="show" identifier="RegisterIdentifier" id="Ic5-Af-zLJ"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -132,10 +132,10 @@
             </objects>
             <point key="canvasLocation" x="140.57971014492756" y="99.776785714285708"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="Clo-Eh-BUV">
             <objects>
-                <viewController id="dz7-SR-1fd" sceneMemberID="viewController">
+                <viewController id="dz7-SR-1fd" customClass="RegisterViewController" customModule="MesaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TR1-tE-Mxi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -219,10 +219,10 @@
             </objects>
             <point key="canvasLocation" x="1997" y="-119"/>
         </scene>
-        <!--View Controller-->
+        <!--News Feed View Controller-->
         <scene sceneID="p9O-Ll-Ddy">
             <objects>
-                <viewController id="Omx-EF-FmP" sceneMemberID="viewController">
+                <viewController id="Omx-EF-FmP" customClass="NewsFeedViewController" customModule="MesaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3I3-vi-7g0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
