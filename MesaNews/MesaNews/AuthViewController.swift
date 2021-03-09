@@ -22,11 +22,14 @@ class AuthViewController: UIViewController, AuthViewProtocol {
     
     let mesa = MesaAPIService()
     
+    var presenter: AuthPresenter?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         
+        presenter = AuthPresenter(view: self)
     }
     
     @IBAction func loginButton(_ sender: Any) {
@@ -36,6 +39,11 @@ class AuthViewController: UIViewController, AuthViewProtocol {
 //            
 //            self.performSegue(withIdentifier: self.newsFeedIdentifier, sender: sender)
 //        }
+        
+        guard let email = emailTextField.text, let password = passwordTextField.text else {
+            return
+        }
+        presenter?.signin(email: email, password: password)
     }
     
     func createAlert(message: String) {
