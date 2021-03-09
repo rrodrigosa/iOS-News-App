@@ -101,7 +101,6 @@
                                                         <rect key="frame" x="165" y="0.0" width="52" height="30"/>
                                                         <state key="normal" title="Sign up"/>
                                                         <connections>
-                                                            <action selector="registerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dy5-u7-yg8"/>
                                                             <segue destination="dz7-SR-1fd" kind="show" identifier="RegisterIdentifier" id="Ic5-Af-zLJ"/>
                                                         </connections>
                                                     </button>
