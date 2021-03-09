@@ -21,11 +21,6 @@ class AuthPresenter: AuthPresenterProtocol {
         self.view = view
     }
     
-//    func showCurrentWeather(for city: String) {
-//        weather = weatherProvider.getWeather(for: city)
-//        view.setWeather(weather: "\(weather?.city ?? "") result: \(weather?.temperature ?? 0)")
-//    }
-    
     func getToken(email: String, password: String) {
 //        mesaAPIService.signinUserRequest(email: email, password: password)
         mesaAPIService.signinUserRequest(email: "john@doe.com", password: "123456") {
