@@ -10,7 +10,7 @@ import Alamofire
 
 class MesaAPIService {
     let baseUrl = "https://mesa-news-api.herokuapp.com"
-    var authToken = ""
+    var authToken: String?
     
     // MARK: -> signinUserRequest
     func signinUserRequest(email: String, password: String, completion:  @escaping (_ apiAuthDataSet: APIAuthDataSet?, _ error: String?) -> Void) {
@@ -37,10 +37,7 @@ class MesaAPIService {
                         return
                     }
                     
-                    guard let token = apiReturnData.token else {
-                        return
-                    }
-                    self.authToken = token
+                    self.authToken = apiReturnData.token
                     completion(apiReturnData, "")
         }
     }
