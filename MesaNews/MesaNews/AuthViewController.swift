@@ -32,9 +32,6 @@ class AuthViewController: UIViewController {
         }
     }
     
-    @IBAction func registerButton(_ sender: Any) {
-    }
-    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // add another condition? if user has token, allow navigation
