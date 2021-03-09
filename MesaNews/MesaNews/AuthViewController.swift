@@ -20,14 +20,16 @@ class AuthViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        
+    }
+    
+    @IBAction func loginButton(_ sender: Any) {
         mesa.signinUserRequest(email: "john@doe.com", password: "123456") {
             (data: APIAuthDataSet?, error: String?) in
             print("rdsa - token: \(String(describing: data?.token))")
             
+            self.performSegue(withIdentifier: self.newsFeedIdentifier, sender: sender)
         }
-    }
-    
-    @IBAction func loginButton(_ sender: Any) {
     }
     
     @IBAction func registerButton(_ sender: Any) {

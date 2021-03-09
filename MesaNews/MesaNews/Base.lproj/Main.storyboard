@@ -76,7 +76,6 @@
                                                 <state key="normal" title="Login"/>
                                                 <connections>
                                                     <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JnE-Zb-SfN"/>
-                                                    <segue destination="Omx-EF-FmP" kind="show" identifier="NewsFeedIdentifier" id="b48-Z1-oeW"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -126,6 +125,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="06e-o6-w70" id="USn-eT-3HN"/>
                         <outlet property="passwordTextField" destination="Zt3-er-iS7" id="Whg-ux-Nub"/>
+                        <segue destination="Omx-EF-FmP" kind="show" identifier="NewsFeedIdentifier" id="6qS-9L-sYP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
