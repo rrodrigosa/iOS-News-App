@@ -75,6 +75,7 @@
                                                 </constraints>
                                                 <state key="normal" title="Login"/>
                                                 <connections>
+                                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JnE-Zb-SfN"/>
                                                     <segue destination="Omx-EF-FmP" kind="show" identifier="NewsFeedIdentifier" id="b48-Z1-oeW"/>
                                                 </connections>
                                             </button>
@@ -101,6 +102,7 @@
                                                         <rect key="frame" x="165" y="0.0" width="52" height="30"/>
                                                         <state key="normal" title="Sign up"/>
                                                         <connections>
+                                                            <action selector="registerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dy5-u7-yg8"/>
                                                             <segue destination="dz7-SR-1fd" kind="show" identifier="RegisterIdentifier" id="Ic5-Af-zLJ"/>
                                                         </connections>
                                                     </button>
@@ -123,9 +125,7 @@
                     <navigationItem key="navigationItem" id="cit-vp-QDy"/>
                     <connections>
                         <outlet property="emailTextField" destination="06e-o6-w70" id="USn-eT-3HN"/>
-                        <outlet property="loginButton" destination="EAH-LK-zjU" id="XvR-lN-zKI"/>
                         <outlet property="passwordTextField" destination="Zt3-er-iS7" id="Whg-ux-Nub"/>
-                        <outlet property="signupButton" destination="yIE-Of-rai" id="0Vr-4m-dlm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

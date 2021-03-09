@@ -10,8 +10,6 @@ import UIKit
 class AuthViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var signupButton: UIButton!
     
     let newsFeedIdentifier = "NewsFeedIdentifier"
     let registerIdentifier = "RegisterIdentifier"
@@ -27,6 +25,12 @@ class AuthViewController: UIViewController {
             print("rdsa - token: \(String(describing: data?.token))")
             
         }
+    }
+    
+    @IBAction func loginButton(_ sender: Any) {
+    }
+    
+    @IBAction func registerButton(_ sender: Any) {
     }
     
     // MARK: - Navigation
