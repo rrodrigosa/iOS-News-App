@@ -29,7 +29,12 @@ class AuthPresenter: AuthPresenterProtocol {
             guard let data = data else {
                 return
             }
-            self.view.createAlert(message: message)
+            
+            if data.token != nil {
+                self.view.goToNewsFeed()
+            } else if let message = data.message {
+                self.view.createAlert(message: message)
+            }
         }
     }
     
