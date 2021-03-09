@@ -20,8 +20,6 @@ class AuthViewController: UIViewController, AuthViewProtocol {
     let newsFeedIdentifier = "NewsFeedIdentifier"
     let registerIdentifier = "RegisterIdentifier"
     
-//    let mesa = MesaAPIService()
-    
     var presenter: AuthPresenter?
     
     override func viewDidLoad() {
@@ -38,7 +36,6 @@ class AuthViewController: UIViewController, AuthViewProtocol {
     }
     
     func createAlert(message: String) {
-        // dialog
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
               switch action.style {
