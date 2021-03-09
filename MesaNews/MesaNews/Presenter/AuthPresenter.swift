@@ -9,7 +9,7 @@ import Foundation
 
 protocol AuthPresenterProtocol {
     init(view: AuthViewProtocol)
-    func getToken(email: String, password: String)
+    func signin(email: String, password: String)
 }
 
 class AuthPresenter: AuthPresenterProtocol {
@@ -21,7 +21,7 @@ class AuthPresenter: AuthPresenterProtocol {
         self.view = view
     }
     
-    func getToken(email: String, password: String) {
+    func signin(email: String, password: String) {
 //        mesaAPIService.signinUserRequest(email: email, password: password)
         mesaAPIService.signinUserRequest(email: "john@doe.com", password: "123456") {
             (data: APIAuthDataSet?, error: String?) in
@@ -29,7 +29,7 @@ class AuthPresenter: AuthPresenterProtocol {
             guard let data = data else {
                 return
             }
-            self.view.setToken(apiAuthDataSet: data)
+            self.view.createAlert(message: message)
         }
     }
     
