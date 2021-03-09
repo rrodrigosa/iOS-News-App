@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AuthViewProtocol: class {
-    func setToken(apiAuthDataSet: APIAuthDataSet)
+    func createAlert(message: String)
 }
 
 class AuthViewController: UIViewController, AuthViewProtocol {
