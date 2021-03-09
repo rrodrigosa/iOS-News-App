@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol AuthViewProtocol: class {
+    func setToken(apiAuthDataSet: APIAuthDataSet)
+}
+
 class AuthViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -24,12 +28,12 @@ class AuthViewController: UIViewController {
     }
     
     @IBAction func loginButton(_ sender: Any) {
-        mesa.signinUserRequest(email: "john@doe.com", password: "123456") {
-            (data: APIAuthDataSet?, error: String?) in
-            print("rdsa - token: \(String(describing: data?.token))")
-            
-            self.performSegue(withIdentifier: self.newsFeedIdentifier, sender: sender)
-        }
+//        mesa.signinUserRequest(email: "john@doe.com", password: "123456") {
+//            (data: APIAuthDataSet?, error: String?) in
+//            print("rdsa - token: \(String(describing: data?.token))")
+//            
+//            self.performSegue(withIdentifier: self.newsFeedIdentifier, sender: sender)
+//        }
     }
     
     // MARK: - Navigation
