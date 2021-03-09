@@ -13,6 +13,8 @@
 		CB0D51E025F7FE4700F10AAC /* NewsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0D51DF25F7FE4700F10AAC /* NewsFeedViewController.swift */; };
 		CB0D51E525F7FF9B00F10AAC /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0D51E425F7FF9B00F10AAC /* RegisterViewController.swift */; };
 		CB0D51EA25F8187900F10AAC /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0D51E925F8187900F10AAC /* AuthPresenter.swift */; };
+		CB18F8F425F8301B00512AAF /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18F8F325F8301B00512AAF /* RegisterPresenter.swift */; };
+		CB18F8F925F8325000512AAF /* APIRegisterDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB18F8F825F8325000512AAF /* APIRegisterDataSet.swift */; };
 		CB32004D25F1A47400766C62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32004C25F1A47400766C62 /* AppDelegate.swift */; };
 		CB32004F25F1A47400766C62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32004E25F1A47400766C62 /* SceneDelegate.swift */; };
 		CB32005125F1A47400766C62 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32005025F1A47400766C62 /* AuthViewController.swift */; };
@@ -55,6 +57,8 @@
 		CB0D51DF25F7FE4700F10AAC /* NewsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedViewController.swift; sourceTree = "<group>"; };
 		CB0D51E425F7FF9B00F10AAC /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		CB0D51E925F8187900F10AAC /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
+		CB18F8F325F8301B00512AAF /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		CB18F8F825F8325000512AAF /* APIRegisterDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRegisterDataSet.swift; sourceTree = "<group>"; };
 		CB32004925F1A47400766C62 /* MesaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MesaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB32004C25F1A47400766C62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB32004E25F1A47400766C62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -198,6 +202,7 @@
 			children = (
 				CB78B34425F6E34F00455A14 /* User.swift */,
 				CB78B36725F7103D00455A14 /* APIAuthDataSet.swift */,
+				CB18F8F825F8325000512AAF /* APIRegisterDataSet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				CB0D51E925F8187900F10AAC /* AuthPresenter.swift */,
+				CB18F8F325F8301B00512AAF /* RegisterPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -461,10 +467,12 @@
 				CB32004D25F1A47400766C62 /* AppDelegate.swift in Sources */,
 				CB0D51E525F7FF9B00F10AAC /* RegisterViewController.swift in Sources */,
 				CB0D51EA25F8187900F10AAC /* AuthPresenter.swift in Sources */,
+				CB18F8F425F8301B00512AAF /* RegisterPresenter.swift in Sources */,
 				CB78B36825F7103D00455A14 /* APIAuthDataSet.swift in Sources */,
 				CB78B35A25F7065F00455A14 /* MesaAPIService.swift in Sources */,
 				CB32004F25F1A47400766C62 /* SceneDelegate.swift in Sources */,
 				CB0D51E025F7FE4700F10AAC /* NewsFeedViewController.swift in Sources */,
+				CB18F8F925F8325000512AAF /* APIRegisterDataSet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
