@@ -9,6 +9,7 @@ import UIKit
 
 protocol AuthViewProtocol: class {
     func createAlert(message: String)
+    func goToNewsFeed()
 }
 
 class AuthViewController: UIViewController, AuthViewProtocol {
@@ -33,6 +34,10 @@ class AuthViewController: UIViewController, AuthViewProtocol {
             return
         }
         presenter?.signin(email: email, password: password)
+    }
+    
+    func goToNewsFeed() {
+        self.performSegue(withIdentifier: newsFeedIdentifier, sender: nil)
     }
     
     func createAlert(message: String) {
