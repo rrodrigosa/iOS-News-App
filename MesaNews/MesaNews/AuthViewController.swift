@@ -11,7 +11,9 @@ protocol AuthViewProtocol: class {
     func setToken(apiAuthDataSet: APIAuthDataSet)
 }
 
-class AuthViewController: UIViewController {
+class AuthViewController: UIViewController, AuthViewProtocol {
+    
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -34,6 +36,9 @@ class AuthViewController: UIViewController {
 //            
 //            self.performSegue(withIdentifier: self.newsFeedIdentifier, sender: sender)
 //        }
+    }
+    
+    func setToken(apiAuthDataSet: APIAuthDataSet) {
     }
     
     // MARK: - Navigation
