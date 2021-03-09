@@ -52,4 +52,46 @@ class MesaAPIService {
         }
     }
     
+    func signupUserRequest(name: String, email: String, password: String, completion:  @escaping (_ apiRegisterDataSet: APIRegisterDataSet?, _ error: String?) -> Void) {
+        let signupUrl = "/v1/client/auth/signup"
+        let fullUrl = baseUrl + signupUrl
+        
+        let parameters: [String:String] = [
+            "name": name,
+            "email": email,
+            "password": password
+        ]
+        
+        AF.request(fullUrl,
+                   method: .post,
+                   parameters: parameters,
+                   encoder: JSONParameterEncoder.default).response { response in
+                    
+                    guard let responseData = response.data else {
+                        print("rdsa - API 1")
+                        completion(nil, "error message")
+                        return
+                    }
+                        
+                    guard let apiReturnData = self.decodeAPIRegisterDataSet(data: responseData) else {
+                        print("rdsa - API 2")
+                        completion(nil, "error message")
+                        return
+                    }
+                    
+                    print("rdsa - API 3")
+                    self.authToken = apiReturnData.token
+                    completion(apiReturnData, "")
+        }
+    }
+    
+    func decodeAPIRegisterDataSet(data: Data) -> APIRegisterDataSet? {
+        do {
+            let decodedData = try JSONDecoder().decode(APIRegisterDataSet.self,
+                                                       from: data)
+            return decodedData
+        } catch {
+            return nil
+        }
+    }
 }
