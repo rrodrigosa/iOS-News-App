@@ -12,7 +12,7 @@
 		6E7A93A616652EBB7EADCC3D /* Pods_MesaNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96707F7929D0CE03A344BDA6 /* Pods_MesaNews.framework */; };
 		CB32004D25F1A47400766C62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32004C25F1A47400766C62 /* AppDelegate.swift */; };
 		CB32004F25F1A47400766C62 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32004E25F1A47400766C62 /* SceneDelegate.swift */; };
-		CB32005125F1A47400766C62 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32005025F1A47400766C62 /* ViewController.swift */; };
+		CB32005125F1A47400766C62 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32005025F1A47400766C62 /* AuthViewController.swift */; };
 		CB32005425F1A47400766C62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB32005225F1A47400766C62 /* Main.storyboard */; };
 		CB32005625F1A47400766C62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB32005525F1A47400766C62 /* Assets.xcassets */; };
 		CB32005925F1A47400766C62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB32005725F1A47400766C62 /* LaunchScreen.storyboard */; };
@@ -52,7 +52,7 @@
 		CB32004925F1A47400766C62 /* MesaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MesaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB32004C25F1A47400766C62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB32004E25F1A47400766C62 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CB32005025F1A47400766C62 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CB32005025F1A47400766C62 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		CB32005325F1A47400766C62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CB32005525F1A47400766C62 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB32005825F1A47400766C62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 				CB78B33625F6D83000455A14 /* View */,
 				CB32004C25F1A47400766C62 /* AppDelegate.swift */,
 				CB32004E25F1A47400766C62 /* SceneDelegate.swift */,
-				CB32005025F1A47400766C62 /* ViewController.swift */,
+				CB32005025F1A47400766C62 /* AuthViewController.swift */,
 				CB32005225F1A47400766C62 /* Main.storyboard */,
 				CB32005525F1A47400766C62 /* Assets.xcassets */,
 				CB32005725F1A47400766C62 /* LaunchScreen.storyboard */,
@@ -448,7 +448,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB78B34525F6E34F00455A14 /* User.swift in Sources */,
-				CB32005125F1A47400766C62 /* ViewController.swift in Sources */,
+				CB32005125F1A47400766C62 /* AuthViewController.swift in Sources */,
 				CB32004D25F1A47400766C62 /* AppDelegate.swift in Sources */,
 				CB78B36825F7103D00455A14 /* APIAuthDataSet.swift in Sources */,
 				CB78B35A25F7065F00455A14 /* MesaAPIService.swift in Sources */,

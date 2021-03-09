@@ -7,8 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class AuthViewController: UIViewController {
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
+    
     let mesa = MesaAPIService()
     
     override func viewDidLoad() {
@@ -18,9 +22,9 @@ class ViewController: UIViewController {
         mesa.signinUserRequest(email: "john@doe.com", password: "123456") {
             (data: APIAuthDataSet?, error: String?) in
             print("rdsa - token: \(String(describing: data?.token))")
+            
         }
     }
-
 
 }
 
