@@ -12,7 +12,7 @@ protocol NewsFeedViewProtocol: class {
     func populateTable(newsList: [APINewsFeedData])
 }
 
-class NewsFeedViewController: UIViewController, NewsFeedViewProtocol {
+class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableViewDelegate, UITableViewDataSource {
     private var newsList: [APINewsFeedData] = []
     private var filteredNewsList: [APINewsFeedData] = []
     
@@ -23,6 +23,7 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        configureViewDidLoad()
     }
     
     // MARK: - Table view data source
@@ -46,6 +47,16 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol {
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    func configureViewDidLoad() {
+        newsFeedTableView.delegate = self
+        newsFeedTableView.dataSource = self
+        newsFeedTableView.keyboardDismissMode = .onDrag
+        
+        print("rdsa - (NewsFeedViewController) - viewDidLoad - token: \(authToken)")
+        presenter = NewsFeedPresenter(view: self)
+        presenter?.newsFeedRequest(authToken: authToken)
     }
 
 }
