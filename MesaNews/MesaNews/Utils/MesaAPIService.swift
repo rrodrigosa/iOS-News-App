@@ -38,6 +38,7 @@ class MesaAPIService {
                     }
                     
                     self.authToken = apiReturnData.token
+                    print("rdsa - (MesaAPIService) - sign IN token: \(self.authToken)")
                     completion(apiReturnData, "")
         }
     }
@@ -77,6 +78,7 @@ class MesaAPIService {
                         return
                     }
                     self.authToken = apiReturnData.token
+                    print("rdsa - (MesaAPIService) - sign UP token: \(self.authToken)")
                     completion(apiReturnData, "")
         }
     }
@@ -90,4 +92,41 @@ class MesaAPIService {
             return nil
         }
     }
+    
+    func newsFeedRequest(authToken: String, completion:  @escaping (_ apiNewsFeedData: APINewsFeedData?, _ error: String?) -> Void) {
+        self.authToken = authToken
+        let newsUrl = "/v1/client/news?current_page=&per_page=&published_at="
+        let fullUrl = baseUrl + newsUrl
+        
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer \(authToken)",
+            "Accept": "application/json"
+        ]
+
+        AF.request(fullUrl, headers: headers).responseJSON { response in
+            print("rdsa - (MesaAPIService) - responseJSON")
+            guard let responseData = response.data else {
+                completion(nil, "error message")
+                return
+            }
+
+            guard let apiReturnData = self.decodeAPINewsFeedData(data: responseData) else {
+                completion(nil, "error message")
+                return
+            }
+            print("rdsa - (MesaAPIService) - completion")
+            completion(apiReturnData, nil)
+        }
+    }
+    
+    func decodeAPINewsFeedData(data: Data) -> APINewsFeedData? {
+        do {
+            let decodedData = try JSONDecoder().decode(APINewsFeedData.self,
+                                                       from: data)
+            return decodedData
+        } catch {
+            return nil
+        }
+    }
+    
 }
