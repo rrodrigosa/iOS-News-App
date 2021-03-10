@@ -20,6 +20,7 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
     
     var presenter: NewsFeedPresenter?
     var authToken = ""
+    let newsDetailsIdentifier = "NewsDetailsIdentifier"
     
     @IBOutlet weak var newsFeedTableView: UITableView!
     override func viewDidLoad() {
@@ -41,6 +42,16 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         presenter?.checkIfNeedsNewsFetch(indexPaths: indexPaths)
+    }
+    
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // add another condition? if user has token, allow navigation
+        if  segue.identifier == newsDetailsIdentifier {
+            let destination = segue.destination as? NewsFeedViewController
+            destination?.authToken = authToken
+        }
     }
     
     func requestFetch() {

@@ -311,7 +311,7 @@
                                             <outlet property="imageViewActivityIndicator" destination="g6U-W7-Xge" id="S1Z-Yn-dAM"/>
                                             <outlet property="newsFeedImageView" destination="mBR-Ow-EAQ" id="uRi-mR-0F5"/>
                                             <outlet property="titleLabel" destination="q1e-WL-PUt" id="JGf-kq-2QQ"/>
-                                            <segue destination="6Kf-0k-9zy" kind="show" id="ACv-Lu-pge"/>
+                                            <segue destination="6Kf-0k-9zy" kind="show" identifier="NewsDetailsIdentifier" id="ACv-Lu-pge"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
