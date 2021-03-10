@@ -13,7 +13,6 @@ protocol RegisterViewProtocol: class {
 }
 
 class RegisterViewController: UIViewController, RegisterViewProtocol {
-    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -27,7 +26,6 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
         // Do any additional setup after loading the view.
         presenter = RegisterPresenter(view: self)
     }
-
     
     @IBAction func registerButton(_ sender: Any) {
         guard let name = nameTextField.text, !name.isEmpty else {
@@ -54,10 +52,6 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
             createErrorAlert(message: "Password fields do not match")
             return
         }
-        
-        print("")
-        
-        
 //        presenter?.signup(name: name, email: email, password: password)
         
     }
