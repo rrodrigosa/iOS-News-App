@@ -68,18 +68,14 @@ class MesaAPIService {
                    encoder: JSONParameterEncoder.default).response { response in
                     
                     guard let responseData = response.data else {
-                        print("rdsa - API 1")
                         completion(nil, "error message")
                         return
                     }
                         
                     guard let apiReturnData = self.decodeAPIRegisterDataSet(data: responseData) else {
-                        print("rdsa - API 2")
                         completion(nil, "error message")
                         return
                     }
-                    
-                    print("rdsa - API 3")
                     self.authToken = apiReturnData.token
                     completion(apiReturnData, "")
         }
