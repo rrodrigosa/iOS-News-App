@@ -17,6 +17,7 @@ class NewsFeedPresenter: NewsFeedPresenterProtocol {
     private let mesaAPIService = MesaAPIService()
     private var newsList: [APINewsFeedData] = []
     private var currentPage = 1
+    private var isTableEmpty = true
     
     required init(view: NewsFeedViewProtocol) {
         self.view = view
@@ -28,10 +29,23 @@ class NewsFeedPresenter: NewsFeedPresenterProtocol {
             guard let data = data else {
                 return
             }
-            self.currentPage+=1
+            self.currentPage += 1
             self.newsList.append(contentsOf: data)
-            self.view.populateTable(newsList: self.newsList)
+            
+            if !self.isTableEmpty {
+                let indexPathsToReload = self.calculateIndexPathsToReload(from: data)
+                self.view.populateTable(newsList: self.newsList, indexPathsToReload: indexPathsToReload)
+            } else {
+                self.isTableEmpty = false
+                self.view.populateTable(newsList: self.newsList, indexPathsToReload: .none)
+            }
         }
+    }
+    
+    private func calculateIndexPathsToReload(from apiNews: [APINewsFeedData]) -> [IndexPath] {
+        let startIndex = (newsList.count) - apiNews.count
+        let endIndex = startIndex + apiNews.count
+        return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
     }
     
 }
