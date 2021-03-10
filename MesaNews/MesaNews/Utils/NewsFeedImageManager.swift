@@ -15,15 +15,17 @@ class NewsFeedImageManager {
         let imageUrl = newsCell.imageUrl
         let imageName = newsCell.imageUrl?.deletingPathExtension().lastPathComponent
         let imageExtension = newsCell.imageUrl?.pathExtension
-        print("rdsa - configureImage | extension: \(imageExtension) | name: \(imageName)")
+//        print("rdsa - configureImage | extension: \(imageExtension) | name: \(imageName)")
         
         guard let unwrappedImageUrl = imageUrl, let unwrappedImageName = imageName, let unwrappedImageExtension = imageExtension else {
             return
         }
         
         DispatchQueue.global().async {
-            self.downloadManager(imageUrl: unwrappedImageUrl, imageName: unwrappedImageName, imageExtension: unwrappedImageExtension) { path in
-                if let unwrappedImagePath = path {
+            let imageExists = self.checkIfImageExists(imageName: unwrappedImageName, imageExtension: unwrappedImageExtension)
+            if imageExists == true {
+                let imagePath = self.imagePath(imageName: unwrappedImageName, imageExtension: unwrappedImageExtension)
+                if let unwrappedImagePath = imagePath {
                     let resizedImage = self.configureResizeImage(path: unwrappedImagePath, cell: cell, imageName: unwrappedImageName)
                     if let unwrappedResizedImage = resizedImage {
                         DispatchQueue.main.async {
@@ -31,8 +33,27 @@ class NewsFeedImageManager {
                         }
                     }
                 }
+            } else {
+                self.downloadManager(imageUrl: unwrappedImageUrl, imageName: unwrappedImageName, imageExtension: unwrappedImageExtension) { path in
+                    if let unwrappedImagePath = path {
+                        let resizedImage = self.configureResizeImage(path: unwrappedImagePath, cell: cell, imageName: unwrappedImageName)
+                        if let unwrappedResizedImage = resizedImage {
+                            DispatchQueue.main.async {
+                                completion(unwrappedResizedImage)
+                            }
+                        }
+                    }
+                }
             }
         }
+    }
+    
+    func checkIfImageExists(imageName: String, imageExtension: String) -> Bool? {
+        if let imagePath = imagePath(imageName: imageName, imageExtension: imageExtension),
+           let _ = FileManager.default.contents(atPath: imagePath.path) {
+            return true
+        }
+        return false
     }
     
     private func downloadManager(imageUrl: URL, imageName: String, imageExtension: String, completion: @escaping (URL?) -> Void) {
