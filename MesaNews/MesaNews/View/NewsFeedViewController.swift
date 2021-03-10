@@ -10,6 +10,8 @@ import UIKit
 class NewsFeedViewController: UIViewController {
 
     private let mesaAPIService = MesaAPIService()
+    @IBOutlet weak var newsFeedTableView: UITableView!
+    
     var authToken = ""
     
     override func viewDidLoad() {
