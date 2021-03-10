@@ -38,7 +38,6 @@ class MesaAPIService {
                     }
                     
                     self.authToken = apiReturnData.token
-                    print("rdsa - (MesaAPIService) - sign IN token: \(self.authToken)")
                     completion(apiReturnData, "")
         }
     }
@@ -78,7 +77,6 @@ class MesaAPIService {
                         return
                     }
                     self.authToken = apiReturnData.token
-                    print("rdsa - (MesaAPIService) - sign UP token: \(self.authToken)")
                     completion(apiReturnData, "")
         }
     }

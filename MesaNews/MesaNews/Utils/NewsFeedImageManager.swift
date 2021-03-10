@@ -17,7 +17,6 @@ class NewsFeedImageManager {
         let imageUrl = newsCell.imageUrl
         let imageName = newsCell.imageUrl?.deletingPathExtension().lastPathComponent
         let imageExtension = newsCell.imageUrl?.pathExtension
-//        print("rdsa - configureImage | extension: \(imageExtension) | name: \(imageName)")
         
         guard let unwrappedImageUrl = imageUrl, let unwrappedImageName = imageName, let unwrappedImageExtension = imageExtension else {
             return
@@ -113,7 +112,6 @@ class NewsFeedImageManager {
         guard let documentPath = fileManager.urls(for: .documentDirectory,
                                                   in: FileManager.SearchPathDomainMask.userDomainMask).first else { return nil }
         let appendedDocumentPath = documentPath.appendingPathComponent(imageName).appendingPathExtension(imageExtension)
-//        print("rdsa - appendedDocumentPath: \(appendedDocumentPath)")
         return appendedDocumentPath
     }
 }

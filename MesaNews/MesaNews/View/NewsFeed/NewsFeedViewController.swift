@@ -91,8 +91,6 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
         newsFeedTableView.dataSource = self
         newsFeedTableView.prefetchDataSource = self
         newsFeedTableView.keyboardDismissMode = .onDrag
-        
-        print("rdsa - (NewsFeedViewController) - viewDidLoad - token: \(authToken)")
         presenter = NewsFeedPresenter(view: self)
         presenter?.newsFeedRequest(authToken: authToken)
     }

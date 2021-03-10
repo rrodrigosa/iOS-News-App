@@ -54,10 +54,8 @@ class AuthViewController: UIViewController, AuthViewProtocol {
         if  segue.identifier == newsFeedIdentifier {
             let destination = segue.destination as? NewsFeedViewController
             destination?.authToken = authToken
-            print("news feed interface")
         } else if segue.identifier == registerIdentifier {
             let destination = segue.destination as? RegisterViewController
-            print("register interface")
         }
     }
 
