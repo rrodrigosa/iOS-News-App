@@ -12,6 +12,8 @@ import AlamofireImage
 class NewsFeedImageManager {
     
     func configureImage(newsCell: APINewsFeedData, cell: NewsFeedCell, completion: @escaping (UIImage) -> Void) {
+        let cellWidth = cell.newsFeedImageView.bounds.size.width
+        let cellHeight = cell.newsFeedImageView.bounds.size.height
         let imageUrl = newsCell.imageUrl
         let imageName = newsCell.imageUrl?.deletingPathExtension().lastPathComponent
         let imageExtension = newsCell.imageUrl?.pathExtension
@@ -26,7 +28,7 @@ class NewsFeedImageManager {
             if imageExists == true {
                 let imagePath = self.imagePath(imageName: unwrappedImageName, imageExtension: unwrappedImageExtension)
                 if let unwrappedImagePath = imagePath {
-                    let resizedImage = self.configureResizeImage(path: unwrappedImagePath, cell: cell, imageName: unwrappedImageName)
+                    let resizedImage = self.configureResizeImage(path: unwrappedImagePath, cell: cell, imageName: unwrappedImageName, cellWidth: cellWidth, cellHeight: cellHeight)
                     if let unwrappedResizedImage = resizedImage {
                         DispatchQueue.main.async {
                             completion(unwrappedResizedImage)
@@ -36,7 +38,7 @@ class NewsFeedImageManager {
             } else {
                 self.downloadManager(imageUrl: unwrappedImageUrl, imageName: unwrappedImageName, imageExtension: unwrappedImageExtension) { path in
                     if let unwrappedImagePath = path {
-                        let resizedImage = self.configureResizeImage(path: unwrappedImagePath, cell: cell, imageName: unwrappedImageName)
+                        let resizedImage = self.configureResizeImage(path: unwrappedImagePath, cell: cell, imageName: unwrappedImageName, cellWidth: cellWidth, cellHeight: cellHeight)
                         if let unwrappedResizedImage = resizedImage {
                             DispatchQueue.main.async {
                                 completion(unwrappedResizedImage)
@@ -67,10 +69,8 @@ class NewsFeedImageManager {
         }
     }
 
-    func configureResizeImage(path: URL, cell: NewsFeedCell, imageName: String) -> UIImage? {
-        let width = cell.newsFeedImageView.bounds.size.width
-        let height = cell.newsFeedImageView.bounds.size.height
-        let size = CGSize(width: width, height: height)
+    func configureResizeImage(path: URL, cell: NewsFeedCell, imageName: String, cellWidth: CGFloat, cellHeight: CGFloat) -> UIImage? {
+        let size = CGSize(width: cellWidth, height: cellHeight)
         let resizedImage = resizeImage(at: path, for: size)
         if let unwrappedResizedImage = resizedImage {
             return unwrappedResizedImage
