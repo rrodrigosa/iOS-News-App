@@ -52,7 +52,7 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
             createErrorAlert(message: "Password fields do not match")
             return
         }
-//        presenter?.signup(name: name, email: email, password: password)
+        presenter?.signup(name: name, email: email, password: password)
     }
     
     func createErrorAlert(message: String) {
