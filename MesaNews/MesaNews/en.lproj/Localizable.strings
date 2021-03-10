@@ -5,3 +5,17 @@
   Created by RodrigoSA on 3/10/21.
   
 */
+
+"Error" = "Error";
+"Retry" = "Retry";
+"No data received from API" = "No data received from API";
+"Could not decode API data" = "Could not decode API data";
+"No news data received from API" = "No news data received from API";
+"OK" = "OK";
+"Alert" = "Alert";
+"Fill in the name field" = "Fill in the name field";
+"Fill in the email field" = "Fill in the email field";
+"Fill in the password field" = "Fill in the password field";
+"Fill in the password confirmation field" = "Fill in the password confirmation field";
+"Password fields do not match" = "Password fields do not match";
+"Registration successful" = "Registration successful";
