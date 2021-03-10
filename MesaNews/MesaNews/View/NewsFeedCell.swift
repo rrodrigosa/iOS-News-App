@@ -11,6 +11,7 @@ class NewsFeedCell: UITableViewCell {
     @IBOutlet weak var newsFeedImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var imageViewActivityIndicator: UIActivityIndicatorView!
     
     @IBAction func addFavoriteButton(_ sender: Any) {
     }
@@ -19,5 +20,7 @@ class NewsFeedCell: UITableViewCell {
         let newsCell = newsList[indexRow]
         titleLabel.text = newsCell.title
         descriptionLabel.text = newsCell.description
+        newsFeedImageView.image = nil
+        
     }
 }

@@ -285,9 +285,14 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="g6U-W7-Xge">
+                                                    <rect key="frame" x="60" y="40.333333333333336" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="g6U-W7-Xge" firstAttribute="centerX" secondItem="mBR-Ow-EAQ" secondAttribute="centerX" id="B3x-QN-iJJ"/>
                                                 <constraint firstItem="8FD-y4-lNw" firstAttribute="top" secondItem="XBv-3l-kxD" secondAttribute="top" id="E2P-jF-xpC"/>
+                                                <constraint firstItem="g6U-W7-Xge" firstAttribute="centerY" secondItem="mBR-Ow-EAQ" secondAttribute="centerY" id="F7E-mz-HOZ"/>
                                                 <constraint firstItem="8FD-y4-lNw" firstAttribute="leading" secondItem="q1e-WL-PUt" secondAttribute="trailing" id="Pn5-2z-KnH"/>
                                                 <constraint firstItem="q1e-WL-PUt" firstAttribute="leading" secondItem="mBR-Ow-EAQ" secondAttribute="trailing" constant="8" symbolic="YES" id="SVV-Do-5F9"/>
                                                 <constraint firstAttribute="trailing" secondItem="8FD-y4-lNw" secondAttribute="trailing" id="VrL-X1-eEm"/>
@@ -303,6 +308,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="wx2-4G-67s" id="O0n-Pv-edv"/>
+                                            <outlet property="imageViewActivityIndicator" destination="g6U-W7-Xge" id="S1Z-Yn-dAM"/>
                                             <outlet property="newsFeedImageView" destination="mBR-Ow-EAQ" id="uRi-mR-0F5"/>
                                             <outlet property="titleLabel" destination="q1e-WL-PUt" id="JGf-kq-2QQ"/>
                                             <segue destination="6Kf-0k-9zy" kind="show" id="ACv-Lu-pge"/>
