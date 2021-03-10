@@ -9,7 +9,7 @@ import Foundation
 
 struct APINewsFeedDataSet: Codable {
     var pagination: APINewsFeedDataPagination?
-    var data: APINewsFeedData?
+    var data: [APINewsFeedData]?
     
     enum CodingKeys: String, CodingKey {
         case pagination, data
