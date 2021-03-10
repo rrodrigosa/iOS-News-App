@@ -21,8 +21,7 @@ class AuthPresenter: AuthPresenterProtocol {
     }
     
     func signin(email: String, password: String) {
-//        mesaAPIService.signinUserRequest(email: email, password: password) {
-        mesaAPIService.signinUserRequest(email: "john@doe.com", password: "123456") {
+        mesaAPIService.signinUserRequest(email: email, password: password) {
             (data: APIAuthDataSet?, error: String?) in
             guard let data = data else {
                 return
