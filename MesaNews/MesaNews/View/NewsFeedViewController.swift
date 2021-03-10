@@ -12,7 +12,7 @@ protocol NewsFeedViewProtocol: class {
     func populateTable(newsList: [APINewsFeedData])
 }
 
-class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableViewDelegate, UITableViewDataSource {
+class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
     private var newsList: [APINewsFeedData] = []
     private var filteredNewsList: [APINewsFeedData] = []
     
@@ -37,6 +37,16 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
         return cell
     }
     
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        if indexPaths.contains(where: isLastCell) {
+            presenter?.newsFeedRequest(authToken: authToken)
+        }
+    }
+    
+    func isLastCell(indexPath: IndexPath) -> Bool {
+        return indexPath.row >= newsList.count - 1
+    }
+    
     // MARK: - Helpers
     func populateTable(newsList: [APINewsFeedData]) {
         self.newsList = newsList
@@ -52,6 +62,7 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
     func configureViewDidLoad() {
         newsFeedTableView.delegate = self
         newsFeedTableView.dataSource = self
+        newsFeedTableView.prefetchDataSource = self
         newsFeedTableView.keyboardDismissMode = .onDrag
         
         print("rdsa - (NewsFeedViewController) - viewDidLoad - token: \(authToken)")
