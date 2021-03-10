@@ -28,12 +28,12 @@ class MesaAPIService {
                    encoder: JSONParameterEncoder.default).response { response in
                     
                     guard let responseData = response.data else {
-                        completion(nil, "error message")
+                        completion(nil, ErrorMessage.apiNoData.message)
                         return
                     }
                         
                     guard let apiReturnData = self.decodeAPIAuthDataSet(data: responseData) else {
-                        completion(nil, "error message")
+                        completion(nil, ErrorMessage.decode.message)
                         return
                     }
                     
@@ -68,12 +68,12 @@ class MesaAPIService {
                    encoder: JSONParameterEncoder.default).response { response in
                     
                     guard let responseData = response.data else {
-                        completion(nil, "error message")
+                        completion(nil, ErrorMessage.apiNoData.message)
                         return
                     }
                         
                     guard let apiReturnData = self.decodeAPIRegisterDataSet(data: responseData) else {
-                        completion(nil, "error message")
+                        completion(nil, ErrorMessage.decode.message)
                         return
                     }
                     self.authToken = apiReturnData.token
@@ -107,15 +107,15 @@ class MesaAPIService {
 
         AF.request(fullUrl, parameters: parameters, headers: headers).responseJSON { response in
             guard let responseData = response.data else {
-                completion(nil, "error message")
+                completion(nil, ErrorMessage.apiNoData.message)
                 return
             }
             guard let apiReturnData = self.decodeAPINewsFeedDataSet(data: responseData) else {
-                completion(nil, "error message")
+                completion(nil, ErrorMessage.decode.message)
                 return
             }
             guard let results = apiReturnData.data else {
-                completion(nil, "error message")
+                completion(nil, ErrorMessage.resultNoData.message)
                 return
             }
             completion(results, nil)
@@ -132,4 +132,21 @@ class MesaAPIService {
         }
     }
     
+}
+
+private enum ErrorMessage: Error {
+    case apiNoData
+    case decode
+    case resultNoData
+    
+    var message: String {
+        switch self {
+        case .apiNoData:
+            return "No data received from API".localized
+        case .decode:
+            return "Could not decode API data".localized
+        case .resultNoData:
+            return "No news data received from API".localized
+        }
+    }
 }
