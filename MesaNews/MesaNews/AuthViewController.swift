@@ -9,7 +9,7 @@ import UIKit
 
 protocol AuthViewProtocol: class {
     func createAlert(message: String)
-    func goToNewsFeed()
+    func goToNewsFeed(authToken: String)
 }
 
 class AuthViewController: UIViewController, AuthViewProtocol {
@@ -22,6 +22,7 @@ class AuthViewController: UIViewController, AuthViewProtocol {
     let registerIdentifier = "RegisterIdentifier"
     
     var presenter: AuthPresenter?
+    var authToken = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,8 @@ class AuthViewController: UIViewController, AuthViewProtocol {
         presenter?.signin(email: email, password: password)
     }
     
-    func goToNewsFeed() {
+    func goToNewsFeed(authToken: String) {
+        self.authToken = authToken
         self.performSegue(withIdentifier: newsFeedIdentifier, sender: nil)
     }
     
@@ -51,6 +53,7 @@ class AuthViewController: UIViewController, AuthViewProtocol {
         // add another condition? if user has token, allow navigation
         if  segue.identifier == newsFeedIdentifier {
             let destination = segue.destination as? NewsFeedViewController
+            destination?.authToken = authToken
             print("news feed interface")
         } else if segue.identifier == registerIdentifier {
             let destination = segue.destination as? RegisterViewController
