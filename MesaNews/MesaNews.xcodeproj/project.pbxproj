@@ -26,6 +26,7 @@
 		CB78B34525F6E34F00455A14 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB78B34425F6E34F00455A14 /* User.swift */; };
 		CB78B35A25F7065F00455A14 /* MesaAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB78B35925F7065F00455A14 /* MesaAPIService.swift */; };
 		CB78B36825F7103D00455A14 /* APIAuthDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB78B36725F7103D00455A14 /* APIAuthDataSet.swift */; };
+		CBBBA05325F85A130033C576 /* APINewsFeedDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBBA05225F85A130033C576 /* APINewsFeedDataSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		CB78B34425F6E34F00455A14 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB78B35925F7065F00455A14 /* MesaAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesaAPIService.swift; sourceTree = "<group>"; };
 		CB78B36725F7103D00455A14 /* APIAuthDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuthDataSet.swift; sourceTree = "<group>"; };
+		CBBBA05225F85A130033C576 /* APINewsFeedDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINewsFeedDataSet.swift; sourceTree = "<group>"; };
 		E9D93B4AADB22E36110E54E8 /* Pods-MesaNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MesaNewsTests.release.xcconfig"; path = "Target Support Files/Pods-MesaNewsTests/Pods-MesaNewsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,6 +202,7 @@
 		CB78B33F25F6E05F00455A14 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CBBBA05125F859770033C576 /* NewsFeed */,
 				CB78B34425F6E34F00455A14 /* User.swift */,
 				CB78B36725F7103D00455A14 /* APIAuthDataSet.swift */,
 				CB18F8F825F8325000512AAF /* APIRegisterDataSet.swift */,
@@ -222,6 +225,14 @@
 				CB78B35925F7065F00455A14 /* MesaAPIService.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		CBBBA05125F859770033C576 /* NewsFeed */ = {
+			isa = PBXGroup;
+			children = (
+				CBBBA05225F85A130033C576 /* APINewsFeedDataSet.swift */,
+			);
+			path = NewsFeed;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,6 +477,7 @@
 				CB32005125F1A47400766C62 /* AuthViewController.swift in Sources */,
 				CB32004D25F1A47400766C62 /* AppDelegate.swift in Sources */,
 				CB0D51E525F7FF9B00F10AAC /* RegisterViewController.swift in Sources */,
+				CBBBA05325F85A130033C576 /* APINewsFeedDataSet.swift in Sources */,
 				CB0D51EA25F8187900F10AAC /* AuthPresenter.swift in Sources */,
 				CB18F8F425F8301B00512AAF /* RegisterPresenter.swift in Sources */,
 				CB78B36825F7103D00455A14 /* APIAuthDataSet.swift in Sources */,
