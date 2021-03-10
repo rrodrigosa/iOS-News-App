@@ -9,7 +9,7 @@ import UIKit
 
 protocol NewsFeedViewProtocol: class {
     func createAlert(message: String)
-    func populateTable(newsList: [APINewsFeedData])
+    func populateTable(newsList: [APINewsFeedData], indexPathsToReload: [IndexPath]?)
 }
 
 class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
@@ -48,9 +48,19 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
     }
     
     // MARK: - Helpers
-    func populateTable(newsList: [APINewsFeedData]) {
+    func populateTable(newsList: [APINewsFeedData], indexPathsToReload: [IndexPath]?) {
         self.newsList = newsList
-        newsFeedTableView.reloadData()
+        guard let unwrappedIndexPathsToReload = indexPathsToReload else {
+            newsFeedTableView.reloadData()
+            return
+        }
+        addNewTableRows(tableView: newsFeedTableView, indexPathsToReload: unwrappedIndexPathsToReload)
+    }
+    
+    func addNewTableRows(tableView: UITableView, indexPathsToReload: [IndexPath]) {
+        newsFeedTableView.beginUpdates()
+        newsFeedTableView.insertRows(at: indexPathsToReload, with: .automatic)
+        newsFeedTableView.endUpdates()
     }
     
     func createAlert(message: String) {
