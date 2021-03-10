@@ -38,7 +38,7 @@ class MesaAPIService {
                     }
                     
                     self.authToken = apiReturnData.token
-                    completion(apiReturnData, "")
+                    completion(apiReturnData, nil)
         }
     }
     
@@ -77,7 +77,7 @@ class MesaAPIService {
                         return
                     }
                     self.authToken = apiReturnData.token
-                    completion(apiReturnData, "")
+                    completion(apiReturnData, nil)
         }
     }
     
