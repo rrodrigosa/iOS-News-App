@@ -173,6 +173,9 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6R-fq-wBn">
                                                 <rect key="frame" x="0.0" y="210" width="382" height="30"/>
                                                 <state key="normal" title="Register"/>
+                                                <connections>
+                                                    <action selector="registerButton:" destination="dz7-SR-1fd" eventType="touchUpInside" id="NSo-lc-ZxL"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -188,6 +191,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MBz-eU-Pyv"/>
+                    <connections>
+                        <outlet property="birthdayTextField" destination="T8H-Oo-UD7" id="m9s-DE-zbP"/>
+                        <outlet property="emailTextField" destination="J30-J5-kvI" id="d2U-HJ-L9r"/>
+                        <outlet property="nameTextField" destination="RLG-fW-cog" id="oUp-C8-9P3"/>
+                        <outlet property="passwordConfirmationTextField" destination="bB6-eU-1XV" id="p4S-G7-8g6"/>
+                        <outlet property="passwordTextField" destination="EpO-w1-aBE" id="DNn-Sk-dZ6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nzq-P9-dsy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

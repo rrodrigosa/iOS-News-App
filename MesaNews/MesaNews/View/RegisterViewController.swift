@@ -14,14 +14,54 @@ protocol RegisterViewProtocol: class {
 
 class RegisterViewController: UIViewController, RegisterViewProtocol {
     
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var passwordConfirmationTextField: UITextField!
+    @IBOutlet weak var birthdayTextField: UITextField!
     
     var presenter: RegisterPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        presenter = RegisterPresenter(view: self)
     }
 
+    
+    @IBAction func registerButton(_ sender: Any) {
+        if let name = nameTextField.text, name.isEmpty {
+            createErrorAlert(message: "Fill in the name field")
+            return
+        }
+        
+        if let email = emailTextField.text, email.isEmpty {
+            createErrorAlert(message: "Fill in the email field")
+            return
+        }
+        
+        if let password = passwordTextField.text, password.isEmpty {
+            createErrorAlert(message: "Fill in the password field")
+            return
+        }
+        
+        if let passwordConfirmation = passwordConfirmationTextField.text, passwordConfirmation.isEmpty {
+            createErrorAlert(message: "Fill in the password confirmation field")
+            return
+        }
+        
+        if passwordTextField.text != passwordConfirmationTextField.text {
+            createErrorAlert(message: "Password fields do not match")
+            return
+        }
+        
+        print("")
+        
+        
+//        presenter?.signup(name: name, email: email, password: password)
+        
+    }
+    
     func createErrorAlert(message: String) {
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
