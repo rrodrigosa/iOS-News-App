@@ -203,10 +203,10 @@
             </objects>
             <point key="canvasLocation" x="1070" y="543"/>
         </scene>
-        <!--View Controller-->
+        <!--News Details View Controller-->
         <scene sceneID="UtR-jg-Kvl">
             <objects>
-                <viewController id="6Kf-0k-9zy" sceneMemberID="viewController">
+                <viewController id="6Kf-0k-9zy" customClass="NewsDetailsViewController" customModule="MesaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FTs-bB-ALz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -232,6 +232,9 @@
                     <navigationItem key="navigationItem" id="n1Y-xU-lhb">
                         <barButtonItem key="rightBarButtonItem" title="Favorite" image="heart" catalog="system" id="BaC-ln-ZwK"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="newsDetailsWebView" destination="hU8-MY-bvP" id="JXF-rj-tjP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FRr-yy-9jg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -311,7 +314,6 @@
                                             <outlet property="imageViewActivityIndicator" destination="g6U-W7-Xge" id="S1Z-Yn-dAM"/>
                                             <outlet property="newsFeedImageView" destination="mBR-Ow-EAQ" id="uRi-mR-0F5"/>
                                             <outlet property="titleLabel" destination="q1e-WL-PUt" id="JGf-kq-2QQ"/>
-                                            <segue destination="6Kf-0k-9zy" kind="show" identifier="NewsDetailsIdentifier" id="ACv-Lu-pge"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -329,6 +331,7 @@
                     <navigationItem key="navigationItem" id="UCq-3P-7d6"/>
                     <connections>
                         <outlet property="newsFeedTableView" destination="Ldf-Uc-b7Y" id="kQP-T0-Eio"/>
+                        <segue destination="6Kf-0k-9zy" kind="show" identifier="NewsDetailsIdentifier" id="qvs-3r-d5p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAx-dw-s9l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

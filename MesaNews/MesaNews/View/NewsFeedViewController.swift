@@ -46,11 +46,16 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
     
     
     // MARK: - Navigation
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: newsDetailsIdentifier, sender: indexPath)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // add another condition? if user has token, allow navigation
-        if  segue.identifier == newsDetailsIdentifier {
-            let destination = segue.destination as? NewsFeedViewController
-            destination?.authToken = authToken
+        if  segue.identifier == newsDetailsIdentifier, let destination = segue.destination as? NewsDetailsViewController {
+            let indexPath = sender as? IndexPath
+            if let unwrappedSelectedRow = indexPath?.row {
+                destination.newsUrl = newsList[unwrappedSelectedRow].url
+            }
         }
     }
     
