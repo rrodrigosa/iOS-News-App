@@ -24,7 +24,6 @@ class NewsFeedPresenter: NewsFeedPresenterProtocol {
     func newsFeedRequest(authToken: String) {
         mesaAPIService.newsFeedRequest(authToken: authToken) {
             (data: [APINewsFeedData]?, error: String?) in
-            print("rdsa - (NewsFeedViewController) - data from api")
             guard let data = data else {
                 return
             }
