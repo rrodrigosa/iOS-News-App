@@ -35,13 +35,15 @@ class RegisterPresenter: RegisterPresenterProtocol {
             if data.token != nil {
                 self.view.createSuccessfulAlert()
             } else {
-                if let unwrappedMessage = data.error?.message {
-                    self.view.createErrorAlert(message: unwrappedMessage)
+                if let unwrappedErrors = data.errors {
+                    for i in unwrappedErrors {
+                        if let unwrappedMessage = i.message {
+                            self.view.createErrorAlert(message: unwrappedMessage)
+                        }
+                    }
                 }
             }
         }
     }
-    
-    
     
 }

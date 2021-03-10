@@ -9,7 +9,7 @@ import Foundation
 
 struct APIRegisterDataSet: Codable {
     let token: String?
-    let error: APIRegisterError?
+    let errors: [APIRegisterError]?
 }
 
 struct APIRegisterError: Codable {
