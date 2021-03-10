@@ -198,11 +198,9 @@
 		CB78B33625F6D83000455A14 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CBCA155F25F8EA9200D92F31 /* NewsFeed */,
 				CB32005025F1A47400766C62 /* AuthViewController.swift */,
-				CB0D51DF25F7FE4700F10AAC /* NewsFeedViewController.swift */,
 				CB0D51E425F7FF9B00F10AAC /* RegisterViewController.swift */,
-				CB63002025F8833B00714A5D /* NewsFeedCell.swift */,
-				CBCA154E25F8D3B100D92F31 /* NewsDetailsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,9 +218,9 @@
 		CB78B34025F6E06A00455A14 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				CBCA156625F8EAB700D92F31 /* NewsFeed */,
 				CB0D51E925F8187900F10AAC /* AuthPresenter.swift */,
 				CB18F8F325F8301B00512AAF /* RegisterPresenter.swift */,
-				CB63001B25F86D5600714A5D /* NewsFeedPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -240,6 +238,24 @@
 			isa = PBXGroup;
 			children = (
 				CBBBA05225F85A130033C576 /* APINewsFeedDataSet.swift */,
+			);
+			path = NewsFeed;
+			sourceTree = "<group>";
+		};
+		CBCA155F25F8EA9200D92F31 /* NewsFeed */ = {
+			isa = PBXGroup;
+			children = (
+				CB0D51DF25F7FE4700F10AAC /* NewsFeedViewController.swift */,
+				CB63002025F8833B00714A5D /* NewsFeedCell.swift */,
+				CBCA154E25F8D3B100D92F31 /* NewsDetailsViewController.swift */,
+			);
+			path = NewsFeed;
+			sourceTree = "<group>";
+		};
+		CBCA156625F8EAB700D92F31 /* NewsFeed */ = {
+			isa = PBXGroup;
+			children = (
+				CB63001B25F86D5600714A5D /* NewsFeedPresenter.swift */,
 			);
 			path = NewsFeed;
 			sourceTree = "<group>";
