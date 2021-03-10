@@ -21,6 +21,8 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
     var authToken = ""
     let newsDetailsIdentifier = "NewsDetailsIdentifier"
     
+    @IBOutlet weak var fetchingIndicatorView: UIView!
+    @IBOutlet weak var fetchingActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var newsFeedTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +64,9 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
     
     // MARK: - Helpers
     func populateTable(newsList: [APINewsFeedData]) {
+        fetchingIndicatorView.isHidden = true
+        fetchingActivityIndicator.stopAnimating()
+        newsFeedTableView.isHidden = false
         self.newsList = newsList
         newsFeedTableView.reloadData()
     }
