@@ -35,7 +35,9 @@ class RegisterPresenter: RegisterPresenterProtocol {
             if data.token != nil {
                 self.view.createSuccessfulAlert()
             } else {
-                self.view.createErrorAlert(message: "decode errors")
+                if let unwrappedMessage = data.error?.message {
+                    self.view.createErrorAlert(message: unwrappedMessage)
+                }
             }
         }
     }
