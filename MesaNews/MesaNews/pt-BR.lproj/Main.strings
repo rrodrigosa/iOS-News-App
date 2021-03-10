@@ -1,0 +1,57 @@
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "06e-o6-w70"; */
+"06e-o6-w70.placeholder" = "Email";
+
+/* Class = "UIButton"; normalTitle = "Favorite"; ObjectID = "8FD-y4-lNw"; */
+"8FD-y4-lNw.normalTitle" = "Favorito";
+
+/* Class = "UIBarButtonItem"; title = "Favorite"; ObjectID = "BaC-ln-ZwK"; */
+"BaC-ln-ZwK.title" = "Favorito";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Blp-GW-lo3"; */
+"Blp-GW-lo3.text" = "Título";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "EAH-LK-zjU"; */
+"EAH-LK-zjU.normalTitle" = "Login";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "EpO-w1-aBE"; */
+"EpO-w1-aBE.placeholder" = "Senha";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "Ia2-Ko-Npk"; */
+"Ia2-Ko-Npk.text" = "Descrição";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "J30-J5-kvI"; */
+"J30-J5-kvI.placeholder" = "Email";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "RLG-fW-cog"; */
+"RLG-fW-cog.placeholder" = "Nome";
+
+/* Class = "UITextField"; placeholder = "Birthday (optional)"; ObjectID = "T8H-Oo-UD7"; */
+"T8H-Oo-UD7.placeholder" = "Data de nascimento (optional)";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "W6R-fq-wBn"; */
+"W6R-fq-wBn.normalTitle" = "Registro";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "Zt3-er-iS7"; */
+"Zt3-er-iS7.placeholder" = "Senha";
+
+/* Class = "UILabel"; text = "Don't have an account?"; ObjectID = "agr-mK-4mz"; */
+"agr-mK-4mz.text" = "Não possue uma conta?";
+
+/* Class = "UITextField"; placeholder = "Password confirmation"; ObjectID = "bB6-eU-1XV"; */
+"bB6-eU-1XV.placeholder" = "Confirmação de senha";
+
+/* Class = "UILabel"; text = "Mesa News"; ObjectID = "ecy-Qa-uAE"; */
+"ecy-Qa-uAE.text" = "Mesa News";
+
+/* Class = "UILabel"; text = "Fetching API data"; ObjectID = "gwV-oV-T8q"; */
+"gwV-oV-T8q.text" = "Buscando dados da API";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "q1e-WL-PUt"; */
+"q1e-WL-PUt.text" = "Título";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "wx2-4G-67s"; */
+"wx2-4G-67s.text" = "Descrição";
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "yIE-Of-rai"; */
+"yIE-Of-rai.normalTitle" = "Registrar";
