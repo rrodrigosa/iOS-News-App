@@ -30,17 +30,17 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
 
     
     @IBAction func registerButton(_ sender: Any) {
-        if let name = nameTextField.text, name.isEmpty {
+        guard let name = nameTextField.text, !name.isEmpty else {
             createErrorAlert(message: "Fill in the name field")
             return
         }
         
-        if let email = emailTextField.text, email.isEmpty {
+        guard let email = emailTextField.text, !email.isEmpty else {
             createErrorAlert(message: "Fill in the email field")
             return
         }
         
-        if let password = passwordTextField.text, password.isEmpty {
+        guard let password = passwordTextField.text, !password.isEmpty else {
             createErrorAlert(message: "Fill in the password field")
             return
         }
