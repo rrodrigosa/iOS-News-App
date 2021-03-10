@@ -17,7 +17,6 @@ protocol NewsFeedViewProtocol: class {
 class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
     private var newsList: [APINewsFeedData] = []
     private var filteredNewsList: [APINewsFeedData] = []
-    
     var presenter: NewsFeedPresenter?
     var authToken = ""
     let newsDetailsIdentifier = "NewsDetailsIdentifier"
@@ -25,7 +24,6 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
     @IBOutlet weak var newsFeedTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         configureViewDidLoad()
     }
     

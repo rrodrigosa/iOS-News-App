@@ -29,7 +29,6 @@ class NewsFeedCell: UITableViewCell {
         }
     }
     
-    // MARK: Helper addImageToCell
     private func addImageToCell(cell: NewsFeedCell, spinner: UIActivityIndicatorView, image: UIImage) {
         DispatchQueue.main.async {
             spinner.stopAnimating()

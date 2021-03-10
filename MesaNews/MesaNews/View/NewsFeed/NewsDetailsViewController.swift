@@ -21,7 +21,6 @@ class NewsDetailsViewController: UIViewController, WKUIDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         let myURL = newsUrl
         let myRequest = URLRequest(url: myURL!)
         newsDetailsWebView.load(myRequest)

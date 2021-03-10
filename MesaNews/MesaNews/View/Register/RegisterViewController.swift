@@ -23,7 +23,6 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         presenter = RegisterPresenter(view: self)
     }
     
@@ -62,7 +61,7 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
     }
     
     func createSuccessfulAlert() {
-        let message = "Registration successful" //localize
+        let message = "Registration successful"
         let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)

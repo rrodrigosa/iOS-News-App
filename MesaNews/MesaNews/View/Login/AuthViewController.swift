@@ -13,20 +13,16 @@ protocol AuthViewProtocol: class {
 }
 
 class AuthViewController: UIViewController, AuthViewProtocol {
-    
-    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     let newsFeedIdentifier = "NewsFeedIdentifier"
     let registerIdentifier = "RegisterIdentifier"
-    
     var presenter: AuthPresenter?
     var authToken = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         presenter = AuthPresenter(view: self)
     }
     
@@ -50,7 +46,6 @@ class AuthViewController: UIViewController, AuthViewProtocol {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // add another condition? if user has token, allow navigation
         if  segue.identifier == newsFeedIdentifier {
             let destination = segue.destination as? NewsFeedViewController
             destination?.authToken = authToken
