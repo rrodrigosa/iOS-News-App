@@ -16,11 +16,24 @@ class NewsFeedCell: UITableViewCell {
     @IBAction func addFavoriteButton(_ sender: Any) {
     }
     
+    let newsFeedImageManager = NewsFeedImageManager()
+    
     func configureCell(newsList: [APINewsFeedData], cell: NewsFeedCell, indexRow: Int) {
         let newsCell = newsList[indexRow]
         titleLabel.text = newsCell.title
         descriptionLabel.text = newsCell.description
         newsFeedImageView.image = nil
         
+        newsFeedImageManager.configureImage(newsCell: newsCell, cell: cell) { (image) in
+            self.addImageToCell(cell: cell, spinner: cell.imageViewActivityIndicator, image: image)
+        }
+    }
+    
+    // MARK: Helper addImageToCell
+    private func addImageToCell(cell: NewsFeedCell, spinner: UIActivityIndicatorView, image: UIImage) {
+        DispatchQueue.main.async {
+            spinner.stopAnimating()
+            cell.newsFeedImageView.image = image
+        }
     }
 }
