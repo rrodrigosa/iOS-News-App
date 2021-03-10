@@ -9,7 +9,9 @@ import UIKit
 
 protocol NewsFeedViewProtocol: class {
     func createAlert(message: String)
-    func populateTable(newsList: [APINewsFeedData], indexPathsToReload: [IndexPath]?)
+    func populateTable(newsList: [APINewsFeedData])
+    func addTableRows(newsList: [APINewsFeedData], indexPathsToReload: [IndexPath])
+    func requestFetch()
 }
 
 class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
@@ -38,23 +40,22 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
     }
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        if indexPaths.contains(where: isLastCell) {
-            presenter?.newsFeedRequest(authToken: authToken)
-        }
+        presenter?.checkIfNeedsNewsFetch(indexPaths: indexPaths)
     }
     
-    func isLastCell(indexPath: IndexPath) -> Bool {
-        return indexPath.row >= newsList.count - 1
+    func requestFetch() {
+        presenter?.newsFeedRequest(authToken: authToken)
     }
     
     // MARK: - Helpers
-    func populateTable(newsList: [APINewsFeedData], indexPathsToReload: [IndexPath]?) {
+    func populateTable(newsList: [APINewsFeedData]) {
         self.newsList = newsList
-        guard let unwrappedIndexPathsToReload = indexPathsToReload else {
-            newsFeedTableView.reloadData()
-            return
-        }
-        addNewTableRows(tableView: newsFeedTableView, indexPathsToReload: unwrappedIndexPathsToReload)
+        newsFeedTableView.reloadData()
+    }
+    
+    func addTableRows(newsList: [APINewsFeedData], indexPathsToReload: [IndexPath]) {
+        self.newsList = newsList
+        addNewTableRows(tableView: newsFeedTableView, indexPathsToReload: indexPathsToReload)
     }
     
     func addNewTableRows(tableView: UITableView, indexPathsToReload: [IndexPath]) {

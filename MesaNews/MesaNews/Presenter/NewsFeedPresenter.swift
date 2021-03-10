@@ -10,6 +10,7 @@ import Foundation
 protocol NewsFeedPresenterProtocol {
     init(view: NewsFeedViewProtocol)
     func newsFeedRequest(authToken: String)
+    func checkIfNeedsNewsFetch(indexPaths: [IndexPath])
 }
 
 class NewsFeedPresenter: NewsFeedPresenterProtocol {
@@ -34,10 +35,10 @@ class NewsFeedPresenter: NewsFeedPresenterProtocol {
             
             if !self.isTableEmpty {
                 let indexPathsToReload = self.calculateIndexPathsToReload(from: data)
-                self.view.populateTable(newsList: self.newsList, indexPathsToReload: indexPathsToReload)
+                self.view.addTableRows(newsList: self.newsList, indexPathsToReload: indexPathsToReload)
             } else {
                 self.isTableEmpty = false
-                self.view.populateTable(newsList: self.newsList, indexPathsToReload: .none)
+                self.view.populateTable(newsList: self.newsList)
             }
         }
     }
@@ -46,6 +47,16 @@ class NewsFeedPresenter: NewsFeedPresenterProtocol {
         let startIndex = (newsList.count) - apiNews.count
         let endIndex = startIndex + apiNews.count
         return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
+    }
+    
+    func checkIfNeedsNewsFetch(indexPaths: [IndexPath]) {
+        if indexPaths.contains(where: isLastCell) {
+            self.view.requestFetch()
+        }
+    }
+    
+    func isLastCell(indexPath: IndexPath) -> Bool {
+        return indexPath.row >= newsList.count - 1
     }
     
 }
