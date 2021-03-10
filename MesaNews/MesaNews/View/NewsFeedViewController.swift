@@ -7,23 +7,45 @@
 
 import UIKit
 
-class NewsFeedViewController: UIViewController {
+protocol NewsFeedViewProtocol: class {
+    func createAlert(message: String)
+    func populateTable(newsList: [APINewsFeedData])
+}
 
-    private let mesaAPIService = MesaAPIService()
-    @IBOutlet weak var newsFeedTableView: UITableView!
+class NewsFeedViewController: UIViewController, NewsFeedViewProtocol {
+    private var newsList: [APINewsFeedData] = []
+    private var filteredNewsList: [APINewsFeedData] = []
     
+    var presenter: NewsFeedPresenter?
     var authToken = ""
     
+    @IBOutlet weak var newsFeedTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        print("rdsa - (NewsFeedViewController) - viewDidLoad")
-
-        mesaAPIService.newsFeedRequest(authToken: authToken) {
-            (data: APINewsFeedData?, error: String?) in
-            print("rdsa - (NewsFeedViewController) - data from api")
-        }
+    }
+    
+    // MARK: - Table view data source
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return newsList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NewsFeedCell", for: indexPath) as! NewsFeedCell
+        cell.configureCell(newsList: newsList, cell: cell, indexRow: indexPath.row)
+        return cell
+    }
+    
+    // MARK: - Helpers
+    func populateTable(newsList: [APINewsFeedData]) {
+        self.newsList = newsList
+        newsFeedTableView.reloadData()
+    }
+    
+    func createAlert(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
