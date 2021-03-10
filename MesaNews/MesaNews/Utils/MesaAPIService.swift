@@ -93,7 +93,7 @@ class MesaAPIService {
         }
     }
     
-    func newsFeedRequest(authToken: String, completion:  @escaping (_ apiNewsFeedData: [APINewsFeedData]?, _ error: String?) -> Void) {
+    func newsFeedRequest(authToken: String, currentPage: Int, completion:  @escaping (_ apiNewsFeedData: [APINewsFeedData]?, _ error: String?) -> Void) {
         self.authToken = authToken
         let newsUrl = "/v1/client/news?current_page=&per_page=&published_at="
         let fullUrl = baseUrl + newsUrl
@@ -102,8 +102,12 @@ class MesaAPIService {
             "Authorization": "Bearer \(authToken)",
             "Accept": "application/json"
         ]
+        
+        let parameters: [String:Int] = [
+            "current_page": currentPage
+        ]
 
-        AF.request(fullUrl, headers: headers).responseJSON { response in
+        AF.request(fullUrl, parameters: parameters, headers: headers).responseJSON { response in
             guard let responseData = response.data else {
                 completion(nil, "error message")
                 return
