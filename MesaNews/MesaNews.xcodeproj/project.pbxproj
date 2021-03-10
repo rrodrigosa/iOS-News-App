@@ -24,6 +24,7 @@
 		CB32006425F1A47500766C62 /* MesaNewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32006325F1A47500766C62 /* MesaNewsTests.swift */; };
 		CB32006F25F1A47500766C62 /* MesaNewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB32006E25F1A47500766C62 /* MesaNewsUITests.swift */; };
 		CB63001C25F86D5600714A5D /* NewsFeedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63001B25F86D5600714A5D /* NewsFeedPresenter.swift */; };
+		CB63002125F8833B00714A5D /* NewsFeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB63002025F8833B00714A5D /* NewsFeedCell.swift */; };
 		CB78B34525F6E34F00455A14 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB78B34425F6E34F00455A14 /* User.swift */; };
 		CB78B35A25F7065F00455A14 /* MesaAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB78B35925F7065F00455A14 /* MesaAPIService.swift */; };
 		CB78B36825F7103D00455A14 /* APIAuthDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB78B36725F7103D00455A14 /* APIAuthDataSet.swift */; };
@@ -76,6 +77,7 @@
 		CB32006E25F1A47500766C62 /* MesaNewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesaNewsUITests.swift; sourceTree = "<group>"; };
 		CB32007025F1A47500766C62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB63001B25F86D5600714A5D /* NewsFeedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedPresenter.swift; sourceTree = "<group>"; };
+		CB63002025F8833B00714A5D /* NewsFeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedCell.swift; sourceTree = "<group>"; };
 		CB78B34425F6E34F00455A14 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CB78B35925F7065F00455A14 /* MesaAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesaAPIService.swift; sourceTree = "<group>"; };
 		CB78B36725F7103D00455A14 /* APIAuthDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuthDataSet.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 			children = (
 				CB0D51DF25F7FE4700F10AAC /* NewsFeedViewController.swift */,
 				CB0D51E425F7FF9B00F10AAC /* RegisterViewController.swift */,
+				CB63002025F8833B00714A5D /* NewsFeedCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				CB32005125F1A47400766C62 /* AuthViewController.swift in Sources */,
 				CB32004D25F1A47400766C62 /* AppDelegate.swift in Sources */,
 				CB0D51E525F7FF9B00F10AAC /* RegisterViewController.swift in Sources */,
+				CB63002125F8833B00714A5D /* NewsFeedCell.swift in Sources */,
 				CB63001C25F86D5600714A5D /* NewsFeedPresenter.swift in Sources */,
 				CBBBA05325F85A130033C576 /* APINewsFeedDataSet.swift in Sources */,
 				CB0D51EA25F8187900F10AAC /* AuthPresenter.swift in Sources */,
