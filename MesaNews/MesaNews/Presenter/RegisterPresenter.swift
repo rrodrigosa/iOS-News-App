@@ -15,7 +15,6 @@ protocol RegisterPresenterProtocol {
 class RegisterPresenter: RegisterPresenterProtocol {
     unowned let view: RegisterViewProtocol
     private let mesaAPIService = MesaAPIService()
-    private var apiAuthDataSet: APIAuthDataSet?
     
     required init(view: RegisterViewProtocol) {
         self.view = view

@@ -15,7 +15,6 @@ protocol AuthPresenterProtocol {
 class AuthPresenter: AuthPresenterProtocol {
     unowned let view: AuthViewProtocol
     private let mesaAPIService = MesaAPIService()
-    private var apiAuthDataSet: APIAuthDataSet?
     
     required init(view: AuthViewProtocol) {
         self.view = view
