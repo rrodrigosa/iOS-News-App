@@ -93,7 +93,7 @@ class MesaAPIService {
         }
     }
     
-    func newsFeedRequest(authToken: String, completion:  @escaping (_ apiNewsFeedData: APINewsFeedData?, _ error: String?) -> Void) {
+    func newsFeedRequest(authToken: String, completion:  @escaping (_ apiNewsFeedData: [APINewsFeedData]?, _ error: String?) -> Void) {
         self.authToken = authToken
         let newsUrl = "/v1/client/news?current_page=&per_page=&published_at="
         let fullUrl = baseUrl + newsUrl
@@ -110,18 +110,23 @@ class MesaAPIService {
                 return
             }
 
-            guard let apiReturnData = self.decodeAPINewsFeedData(data: responseData) else {
+            guard let apiReturnData = self.decodeAPINewsFeedDataSet(data: responseData) else {
                 completion(nil, "error message")
                 return
             }
             print("rdsa - (MesaAPIService) - completion")
-            completion(apiReturnData, nil)
+            
+            guard let results = apiReturnData.data else {
+                completion(nil, "error message")
+                return
+            }
+            completion(results, nil)
         }
     }
     
-    func decodeAPINewsFeedData(data: Data) -> APINewsFeedData? {
+    func decodeAPINewsFeedDataSet(data: Data) -> APINewsFeedDataSet? {
         do {
-            let decodedData = try JSONDecoder().decode(APINewsFeedData.self,
+            let decodedData = try JSONDecoder().decode(APINewsFeedDataSet.self,
                                                        from: data)
             return decodedData
         } catch {
