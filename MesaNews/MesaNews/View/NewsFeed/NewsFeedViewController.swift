@@ -42,7 +42,6 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
         presenter?.checkIfNeedsNewsFetch(indexPaths: indexPaths)
     }
     
-    
     // MARK: - Navigation
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: newsDetailsIdentifier, sender: indexPath)
