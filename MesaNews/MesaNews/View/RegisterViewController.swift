@@ -53,7 +53,6 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
             return
         }
 //        presenter?.signup(name: name, email: email, password: password)
-        
     }
     
     func createErrorAlert(message: String) {
