@@ -29,6 +29,7 @@
 		CB78B35A25F7065F00455A14 /* MesaAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB78B35925F7065F00455A14 /* MesaAPIService.swift */; };
 		CB78B36825F7103D00455A14 /* APIAuthDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB78B36725F7103D00455A14 /* APIAuthDataSet.swift */; };
 		CBBBA05325F85A130033C576 /* APINewsFeedDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBBA05225F85A130033C576 /* APINewsFeedDataSet.swift */; };
+		CBCA154A25F8969800D92F31 /* NewsFeedImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCA154925F8969800D92F31 /* NewsFeedImageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		CB78B35925F7065F00455A14 /* MesaAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesaAPIService.swift; sourceTree = "<group>"; };
 		CB78B36725F7103D00455A14 /* APIAuthDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuthDataSet.swift; sourceTree = "<group>"; };
 		CBBBA05225F85A130033C576 /* APINewsFeedDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINewsFeedDataSet.swift; sourceTree = "<group>"; };
+		CBCA154925F8969800D92F31 /* NewsFeedImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedImageManager.swift; sourceTree = "<group>"; };
 		E9D93B4AADB22E36110E54E8 /* Pods-MesaNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MesaNewsTests.release.xcconfig"; path = "Target Support Files/Pods-MesaNewsTests/Pods-MesaNewsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				CB78B35925F7065F00455A14 /* MesaAPIService.swift */,
+				CBCA154925F8969800D92F31 /* NewsFeedImageManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 				CB78B34525F6E34F00455A14 /* User.swift in Sources */,
 				CB32005125F1A47400766C62 /* AuthViewController.swift in Sources */,
 				CB32004D25F1A47400766C62 /* AppDelegate.swift in Sources */,
+				CBCA154A25F8969800D92F31 /* NewsFeedImageManager.swift in Sources */,
 				CB0D51E525F7FF9B00F10AAC /* RegisterViewController.swift in Sources */,
 				CB63002125F8833B00714A5D /* NewsFeedCell.swift in Sources */,
 				CB63001C25F86D5600714A5D /* NewsFeedPresenter.swift in Sources */,
