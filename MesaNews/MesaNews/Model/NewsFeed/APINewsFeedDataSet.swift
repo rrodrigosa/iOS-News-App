@@ -37,8 +37,8 @@ struct APINewsFeedData: Codable {
     let author: String?
     let publishedAt: String?
     var highlight: Bool?
-    let url: String?
-    let imageUrl: String?
+    let url: URL?
+    let imageUrl: URL?
     
     enum CodingKeys: String, CodingKey {
         case title = "title"
