@@ -27,6 +27,11 @@ class NewsFeedPresenter: NewsFeedPresenterProtocol {
     func newsFeedRequest(authToken: String) {
         mesaAPIService.newsFeedRequest(authToken: authToken, currentPage: currentPage) {
             (data: [APINewsFeedData]?, error: String?) in
+            if let unwrappedError = error {
+                self.view.createAlert(message: unwrappedError)
+                return
+            }
+            
             guard let data = data else {
                 return
             }

@@ -23,6 +23,11 @@ class AuthPresenter: AuthPresenterProtocol {
     func signin(email: String, password: String) {
         mesaAPIService.signinUserRequest(email: email, password: password) {
             (data: APIAuthDataSet?, error: String?) in
+            if let unwrappedError = error {
+                self.view.createAlert(message: unwrappedError)
+                return
+            }
+            
             guard let data = data else {
                 return
             }

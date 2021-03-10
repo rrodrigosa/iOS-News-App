@@ -23,6 +23,11 @@ class RegisterPresenter: RegisterPresenterProtocol {
     func signup(name: String, email: String, password: String) {
         mesaAPIService.signupUserRequest(name: name, email: email, password: password) {
             (data: APIRegisterDataSet?, error: String?) in
+            if let unwrappedError = error {
+                self.view.createErrorAlert(message: unwrappedError)
+                return
+            }
+            
             guard let data = data else {
                 return
             }
