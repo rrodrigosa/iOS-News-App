@@ -24,7 +24,6 @@ class AuthPresenter: AuthPresenterProtocol {
 //        mesaAPIService.signinUserRequest(email: email, password: password) {
         mesaAPIService.signinUserRequest(email: "john@doe.com", password: "123456") {
             (data: APIAuthDataSet?, error: String?) in
-            print("rdsa - (presenter) | token: \(String(describing: data?.token))")
             guard let data = data else {
                 return
             }

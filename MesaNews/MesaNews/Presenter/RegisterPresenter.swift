@@ -23,7 +23,6 @@ class RegisterPresenter: RegisterPresenterProtocol {
     func signup(name: String, email: String, password: String) {
         mesaAPIService.signupUserRequest(name: name, email: email, password: password) {
             (data: APIRegisterDataSet?, error: String?) in
-            print("rdsa - (presenter) | token: \(String(describing: data?.token))")
             guard let data = data else {
                 return
             }

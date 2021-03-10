@@ -104,18 +104,14 @@ class MesaAPIService {
         ]
 
         AF.request(fullUrl, headers: headers).responseJSON { response in
-            print("rdsa - (MesaAPIService) - responseJSON")
             guard let responseData = response.data else {
                 completion(nil, "error message")
                 return
             }
-
             guard let apiReturnData = self.decodeAPINewsFeedDataSet(data: responseData) else {
                 completion(nil, "error message")
                 return
             }
-            print("rdsa - (MesaAPIService) - completion")
-            
             guard let results = apiReturnData.data else {
                 completion(nil, "error message")
                 return
