@@ -28,42 +28,42 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
     
     @IBAction func registerButton(_ sender: Any) {
         guard let name = nameTextField.text, !name.isEmpty else {
-            createErrorAlert(message: "Fill in the name field")
+            createErrorAlert(message: "Fill in the name field".localized)
             return
         }
         
         guard let email = emailTextField.text, !email.isEmpty else {
-            createErrorAlert(message: "Fill in the email field")
+            createErrorAlert(message: "Fill in the email field".localized)
             return
         }
         
         guard let password = passwordTextField.text, !password.isEmpty else {
-            createErrorAlert(message: "Fill in the password field")
+            createErrorAlert(message: "Fill in the password field".localized)
             return
         }
         
         if let passwordConfirmation = passwordConfirmationTextField.text, passwordConfirmation.isEmpty {
-            createErrorAlert(message: "Fill in the password confirmation field")
+            createErrorAlert(message: "Fill in the password confirmation field".localized)
             return
         }
         
         if passwordTextField.text != passwordConfirmationTextField.text {
-            createErrorAlert(message: "Password fields do not match")
+            createErrorAlert(message: "Password fields do not match".localized)
             return
         }
         presenter?.signup(name: name, email: email, password: password)
     }
     
     func createErrorAlert(message: String) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        let alert = UIAlertController(title: "Alert".localized, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK".localized, style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
     func createSuccessfulAlert() {
-        let message = "Registration successful"
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        let message = "Registration successful".localized
+        let alert = UIAlertController(title: "Alert".localized, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK".localized, style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 

@@ -39,8 +39,8 @@ class AuthViewController: UIViewController, AuthViewProtocol {
     }
     
     func createAlert(message: String) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        let alert = UIAlertController(title: "Alert".localized, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK".localized, style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     

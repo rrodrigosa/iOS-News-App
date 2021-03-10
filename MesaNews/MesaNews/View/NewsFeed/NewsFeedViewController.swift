@@ -83,8 +83,10 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
     }
     
     func createAlert(message: String) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        let alert = UIAlertController(title: "Error".localized, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Retry".localized, style: .default, handler: { action in
+            self.presenter?.newsFeedRequest(authToken: self.authToken)
+        }))
         self.present(alert, animated: true, completion: nil)
     }
     
