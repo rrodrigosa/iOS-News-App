@@ -22,7 +22,7 @@ class AuthPresenter: AuthPresenterProtocol {
     }
     
     func signin(email: String, password: String) {
-//        mesaAPIService.signinUserRequest(email: email, password: password)
+//        mesaAPIService.signinUserRequest(email: email, password: password) {
         mesaAPIService.signinUserRequest(email: "john@doe.com", password: "123456") {
             (data: APIAuthDataSet?, error: String?) in
             print("rdsa - (presenter) | token: \(String(describing: data?.token))")
