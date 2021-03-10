@@ -198,8 +198,8 @@
 		CB78B33625F6D83000455A14 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CBCA156925F8EAED00D92F31 /* Login */,
 				CBCA155F25F8EA9200D92F31 /* NewsFeed */,
-				CB32005025F1A47400766C62 /* AuthViewController.swift */,
 				CB0D51E425F7FF9B00F10AAC /* RegisterViewController.swift */,
 			);
 			path = View;
@@ -208,8 +208,8 @@
 		CB78B33F25F6E05F00455A14 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CBCA156825F8EAE600D92F31 /* Login */,
 				CBBBA05125F859770033C576 /* NewsFeed */,
-				CB78B36725F7103D00455A14 /* APIAuthDataSet.swift */,
 				CB18F8F825F8325000512AAF /* APIRegisterDataSet.swift */,
 			);
 			path = Model;
@@ -218,8 +218,8 @@
 		CB78B34025F6E06A00455A14 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				CBCA156725F8EADC00D92F31 /* Login */,
 				CBCA156625F8EAB700D92F31 /* NewsFeed */,
-				CB0D51E925F8187900F10AAC /* AuthPresenter.swift */,
 				CB18F8F325F8301B00512AAF /* RegisterPresenter.swift */,
 			);
 			path = Presenter;
@@ -258,6 +258,30 @@
 				CB63001B25F86D5600714A5D /* NewsFeedPresenter.swift */,
 			);
 			path = NewsFeed;
+			sourceTree = "<group>";
+		};
+		CBCA156725F8EADC00D92F31 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CB0D51E925F8187900F10AAC /* AuthPresenter.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CBCA156825F8EAE600D92F31 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CB78B36725F7103D00455A14 /* APIAuthDataSet.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CBCA156925F8EAED00D92F31 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CB32005025F1A47400766C62 /* AuthViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
