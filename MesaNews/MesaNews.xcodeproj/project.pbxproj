@@ -30,6 +30,7 @@
 		CB78B36825F7103D00455A14 /* APIAuthDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB78B36725F7103D00455A14 /* APIAuthDataSet.swift */; };
 		CBBBA05325F85A130033C576 /* APINewsFeedDataSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBBA05225F85A130033C576 /* APINewsFeedDataSet.swift */; };
 		CBCA154A25F8969800D92F31 /* NewsFeedImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCA154925F8969800D92F31 /* NewsFeedImageManager.swift */; };
+		CBCA154F25F8D3B100D92F31 /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCA154E25F8D3B100D92F31 /* NewsDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		CB78B36725F7103D00455A14 /* APIAuthDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuthDataSet.swift; sourceTree = "<group>"; };
 		CBBBA05225F85A130033C576 /* APINewsFeedDataSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINewsFeedDataSet.swift; sourceTree = "<group>"; };
 		CBCA154925F8969800D92F31 /* NewsFeedImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFeedImageManager.swift; sourceTree = "<group>"; };
+		CBCA154E25F8D3B100D92F31 /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		E9D93B4AADB22E36110E54E8 /* Pods-MesaNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MesaNewsTests.release.xcconfig"; path = "Target Support Files/Pods-MesaNewsTests/Pods-MesaNewsTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -202,6 +204,7 @@
 				CB0D51DF25F7FE4700F10AAC /* NewsFeedViewController.swift */,
 				CB0D51E425F7FF9B00F10AAC /* RegisterViewController.swift */,
 				CB63002025F8833B00714A5D /* NewsFeedCell.swift */,
+				CBCA154E25F8D3B100D92F31 /* NewsDetailsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				CB18F8F425F8301B00512AAF /* RegisterPresenter.swift in Sources */,
 				CB78B36825F7103D00455A14 /* APIAuthDataSet.swift in Sources */,
 				CB78B35A25F7065F00455A14 /* MesaAPIService.swift in Sources */,
+				CBCA154F25F8D3B100D92F31 /* NewsDetailsViewController.swift in Sources */,
 				CB32004F25F1A47400766C62 /* SceneDelegate.swift in Sources */,
 				CB0D51E025F7FE4700F10AAC /* NewsFeedViewController.swift in Sources */,
 				CB18F8F925F8325000512AAF /* APIRegisterDataSet.swift in Sources */,
