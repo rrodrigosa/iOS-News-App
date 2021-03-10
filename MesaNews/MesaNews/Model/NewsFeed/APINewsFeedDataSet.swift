@@ -8,18 +8,25 @@
 import Foundation
 
 struct APINewsFeedDataSet: Codable {
+    var pagination: APINewsFeedDataPagination?
+    var data: APINewsFeedData?
+    
+    enum CodingKeys: String, CodingKey {
+        case pagination, data
+    }
+}
+
+struct APINewsFeedDataPagination: Codable {
     let currentPage: Int?
     let perPage: Int?
     let totalPages: Int?
     let totalItems: Int?
-    let data: APINewsFeedData?
     
     enum CodingKeys: String, CodingKey {
         case currentPage = "current_page"
         case perPage = "per_page"
         case totalPages = "total_pages"
         case totalItems = "total_items"
-        case data
     }
 }
 
@@ -30,7 +37,7 @@ struct APINewsFeedData: Codable {
     let author: String?
     let publishedAt: String?
     var highlight: Bool?
-    let url: URL?
+    let url: String?
     let imageUrl: String?
     
     enum CodingKeys: String, CodingKey {
