@@ -26,5 +26,9 @@ class NewsDetailsViewController: UIViewController, WKUIDelegate {
         let myRequest = URLRequest(url: myURL!)
         newsDetailsWebView.load(myRequest)
     }
+    
+    @IBAction func addFavoriteButton(_ sender: Any) {
+        
+    }
 
 }

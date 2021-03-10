@@ -230,7 +230,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="n1Y-xU-lhb">
-                        <barButtonItem key="rightBarButtonItem" title="Favorite" image="heart" catalog="system" id="BaC-ln-ZwK"/>
+                        <barButtonItem key="rightBarButtonItem" title="Favorite" image="heart" catalog="system" id="BaC-ln-ZwK">
+                            <connections>
+                                <action selector="addFavoriteButton:" destination="6Kf-0k-9zy" id="vT4-NY-TCU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="newsDetailsWebView" destination="hU8-MY-bvP" id="JXF-rj-tjP"/>
