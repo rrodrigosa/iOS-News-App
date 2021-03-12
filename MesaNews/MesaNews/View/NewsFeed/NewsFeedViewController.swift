@@ -54,6 +54,7 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
             let indexPath = sender as? IndexPath
             if let unwrappedSelectedRow = indexPath?.row {
                 destination.newsUrl = newsList[unwrappedSelectedRow].url
+                destination.newsTitle = newsList[unwrappedSelectedRow].title
             }
         }
     }

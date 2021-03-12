@@ -11,6 +11,7 @@ import WebKit
 class NewsDetailsViewController: UIViewController, WKUIDelegate {
     @IBOutlet weak var newsDetailsWebView: WKWebView!
     var newsUrl: URL?
+    var newsTitle: String?
     
     override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
@@ -28,6 +29,8 @@ class NewsDetailsViewController: UIViewController, WKUIDelegate {
     
     @IBAction func addFavoriteButton(_ sender: Any) {
         
+        let favoriteManager = FavoriteManager()
+        favoriteManager.favoriteNews(title: newsTitle)
     }
 
 }
