@@ -14,6 +14,8 @@ class NewsFeedCell: UITableViewCell {
     @IBOutlet weak var imageViewActivityIndicator: UIActivityIndicatorView!
     
     @IBAction func addFavoriteButton(_ sender: Any) {
+        let favoriteManager = FavoriteManager()
+        favoriteManager.favoriteNews(title: titleLabel.text)
     }
     
     let newsFeedImageManager = NewsFeedImageManager()
