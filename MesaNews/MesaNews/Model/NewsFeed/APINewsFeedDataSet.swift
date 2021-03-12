@@ -40,6 +40,8 @@ struct APINewsFeedData: Codable {
     let url: URL?
     let imageUrl: URL?
     
+    var publishDate: Date?
+    
     enum CodingKeys: String, CodingKey {
         case title = "title"
         case description = "description"

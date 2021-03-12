@@ -37,6 +37,8 @@ class NewsFeedPresenter: NewsFeedPresenterProtocol {
             }
             self.currentPage += 1
             self.newsList.append(contentsOf: data)
+            self.convertDate()
+            self.sortByDate()
             
             if !self.isTableEmpty {
                 let indexPathsToReload = self.calculateIndexPathsToReload(from: data)
@@ -45,6 +47,29 @@ class NewsFeedPresenter: NewsFeedPresenterProtocol {
                 self.isTableEmpty = false
                 self.view.populateTable(newsList: self.newsList)
             }
+        }
+    }
+    
+    private func convertDate() {
+        for i in newsList.indices {
+            if let publishDate = newsList[i].publishedAt {
+                newsList[i].publishDate = convertStringToDate(dateString: publishDate)
+            }
+        }
+    }
+    private func convertStringToDate (dateString: String) -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        let date = dateFormatter.date(from: dateString)
+        return date
+    }
+    
+    private func sortByDate() {
+        newsList.sort() {
+            guard let firstDate = $0.publishDate, let secondDate = $1.publishDate else {
+                return false
+            }
+            return firstDate > secondDate
         }
     }
     
