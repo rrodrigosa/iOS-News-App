@@ -9,7 +9,7 @@ import Foundation
 
 struct FavoriteManager {
     
-    func favoriteNews(title: String?) {
+    func favoriteNews(title: String?) -> Bool {
         let key = "arrayFavoriteNews"
         let defaults = UserDefaults.standard
         let favoriteNews = defaults.object(forKey: key) as? [String] ?? [String]()
@@ -24,15 +24,17 @@ struct FavoriteManager {
                     defaults.set(newFavoriteNews, forKey: key)
                     flag = true
                     print("rdsa - Removed")
-                    return
+                    return false
                 }
             }
             if !flag {
                 newFavoriteNews.append(newsTitle)
                 defaults.set(newFavoriteNews, forKey: key)
                 print("rdsa - Added")
+                return true
             }
         }
+        return false
     }
     
 }
