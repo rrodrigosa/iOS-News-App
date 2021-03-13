@@ -13,9 +13,10 @@ class NewsFeedCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var imageViewActivityIndicator: UIActivityIndicatorView!
     
-    @IBAction func addFavoriteButton(_ sender: Any) {
+    @IBAction func addFavoriteButton(_ sender: UIButton) {
         let favoriteManager = FavoriteManager()
-        favoriteManager.favoriteNews(title: titleLabel.text)
+        let active = favoriteManager.favoriteNews(title: titleLabel.text)
+        changeButtonImage(sender: sender, active: active)
     }
     
     let newsFeedImageManager = NewsFeedImageManager()
@@ -36,5 +37,15 @@ class NewsFeedCell: UITableViewCell {
             spinner.stopAnimating()
             cell.newsFeedImageView.image = image
         }
+    }
+    
+    func changeButtonImage(sender: UIButton, active: Bool) {
+        var star = UIImage()
+        if active {
+            star = #imageLiteral(resourceName: "filled_star_30px").withRenderingMode(.alwaysTemplate);
+        } else {
+            star = #imageLiteral(resourceName: "empty_star_30px").withRenderingMode(.alwaysTemplate);
+        }
+        sender.setImage(star, for: .normal)
     }
 }

@@ -27,10 +27,21 @@ class NewsDetailsViewController: UIViewController, WKUIDelegate {
         newsDetailsWebView.load(myRequest)
     }
     
-    @IBAction func addFavoriteButton(_ sender: Any) {
+    @IBAction func addFavoriteButton(_ sender: UIBarButtonItem) {
         
         let favoriteManager = FavoriteManager()
-        favoriteManager.favoriteNews(title: newsTitle)
+        let active = favoriteManager.favoriteNews(title: newsTitle)
+        changeButtonImage(sender: sender, active: active)
+    }
+    
+    func changeButtonImage(sender: UIBarButtonItem, active: Bool) {
+        var star = UIImage()
+        if active {
+            star = #imageLiteral(resourceName: "filled_star_30px").withRenderingMode(.alwaysTemplate);
+        } else {
+            star = #imageLiteral(resourceName: "empty_star_30px").withRenderingMode(.alwaysTemplate);
+        }
+        sender.image = star
     }
 
 }
