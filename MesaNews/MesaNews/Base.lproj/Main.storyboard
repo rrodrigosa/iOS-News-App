@@ -91,17 +91,17 @@
                                         <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
                                     </stackView>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="200" translatesAutoresizingMaskIntoConstraints="NO" id="CY0-Lr-e4q">
-                                        <rect key="frame" x="0.0" y="248" width="414" height="500"/>
+                                        <rect key="frame" x="0.0" y="248" width="414" height="488"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Ubl-nq-LId">
-                                        <rect key="frame" x="0.0" y="756" width="414" height="18"/>
+                                        <rect key="frame" x="0.0" y="744" width="414" height="30"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="qdb-ue-7jf">
-                                                <rect key="frame" x="98.666666666666686" y="0.0" width="217" height="18"/>
+                                                <rect key="frame" x="98.666666666666686" y="0.0" width="217" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agr-mK-4mz">
-                                                        <rect key="frame" x="0.0" y="0.0" width="161" height="18"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="161" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -110,7 +110,7 @@
                                                         </variation>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIE-Of-rai">
-                                                        <rect key="frame" x="165" y="0.0" width="52" height="18"/>
+                                                        <rect key="frame" x="165" y="0.0" width="52" height="30"/>
                                                         <state key="normal" title="Sign up"/>
                                                         <variation key="heightClass=regular-widthClass=regular">
                                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
@@ -245,7 +245,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hU8-MY-bvP">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -263,7 +263,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="n1Y-xU-lhb">
-                        <barButtonItem key="rightBarButtonItem" title="Favorite" image="heart" catalog="system" id="BaC-ln-ZwK">
+                        <barButtonItem key="rightBarButtonItem" title="Favorite" image="empty_star_30px" id="BaC-ln-ZwK">
+                            <color key="tintColor" systemColor="systemYellowColor"/>
                             <connections>
                                 <action selector="addFavoriteButton:" destination="6Kf-0k-9zy" id="vT4-NY-TCU"/>
                             </connections>
@@ -286,13 +287,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wl5-ZH-KAw">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Dtr-sg-pGQ">
-                                        <rect key="frame" x="188.66666666666666" y="368.66666666666669" width="37" height="37"/>
+                                        <rect key="frame" x="188.66666666666666" y="344" width="37" height="37"/>
                                     </activityIndicatorView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fetching API data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwV-oV-T8q">
-                                        <rect key="frame" x="132.66666666666666" y="329.66666666666669" width="148.99999999999997" height="23"/>
+                                        <rect key="frame" x="132.66666666666666" y="305" width="148.99999999999997" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -310,7 +311,7 @@
                                 </constraints>
                             </view>
                             <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ldf-Uc-b7Y">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NewsFeedCell" id="Vhh-19-Z39" customClass="NewsFeedCell" customModule="MesaNews" customModuleProvider="target">
@@ -328,7 +329,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q1e-WL-PUt">
-                                                    <rect key="frame" x="127.99999999999999" y="8" width="233.66666666666663" height="18"/>
+                                                    <rect key="frame" x="127.99999999999999" y="8" width="208.66666666666663" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -336,18 +337,8 @@
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                     </variation>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8FD-y4-lNw">
-                                                    <rect key="frame" x="361.66666666666669" y="0.0" width="21" height="100.33333333333333"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="21" id="A3p-Ig-TVJ"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Favorite" image="heart" catalog="system"/>
-                                                    <connections>
-                                                        <action selector="addFavoriteButton:" destination="Vhh-19-Z39" eventType="touchUpInside" id="1R3-4B-LET"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wx2-4G-67s">
-                                                    <rect key="frame" x="127.99999999999999" y="34" width="233.66666666666663" height="18"/>
+                                                    <rect key="frame" x="127.99999999999999" y="34" width="208.66666666666663" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -358,19 +349,30 @@
                                                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="g6U-W7-Xge">
                                                     <rect key="frame" x="60" y="40.333333333333336" width="20" height="20"/>
                                                 </activityIndicatorView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8FD-y4-lNw">
+                                                    <rect key="frame" x="344.66666666666669" y="0.0" width="30" height="100.33333333333333"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="A3p-Ig-TVJ"/>
+                                                    </constraints>
+                                                    <color key="tintColor" systemColor="systemYellowColor"/>
+                                                    <state key="normal" title="Favorite" image="empty_star_30px"/>
+                                                    <connections>
+                                                        <action selector="addFavoriteButton:" destination="Vhh-19-Z39" eventType="touchUpInside" id="1R3-4B-LET"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="g6U-W7-Xge" firstAttribute="centerX" secondItem="mBR-Ow-EAQ" secondAttribute="centerX" id="B3x-QN-iJJ"/>
                                                 <constraint firstItem="8FD-y4-lNw" firstAttribute="top" secondItem="XBv-3l-kxD" secondAttribute="top" id="E2P-jF-xpC"/>
                                                 <constraint firstItem="g6U-W7-Xge" firstAttribute="centerY" secondItem="mBR-Ow-EAQ" secondAttribute="centerY" id="F7E-mz-HOZ"/>
-                                                <constraint firstItem="8FD-y4-lNw" firstAttribute="leading" secondItem="q1e-WL-PUt" secondAttribute="trailing" id="Pn5-2z-KnH"/>
+                                                <constraint firstItem="8FD-y4-lNw" firstAttribute="leading" secondItem="q1e-WL-PUt" secondAttribute="trailing" constant="8" id="Pn5-2z-KnH"/>
                                                 <constraint firstItem="q1e-WL-PUt" firstAttribute="leading" secondItem="mBR-Ow-EAQ" secondAttribute="trailing" constant="8" symbolic="YES" id="SVV-Do-5F9"/>
-                                                <constraint firstAttribute="trailing" secondItem="8FD-y4-lNw" secondAttribute="trailing" id="VrL-X1-eEm"/>
+                                                <constraint firstAttribute="trailing" secondItem="8FD-y4-lNw" secondAttribute="trailing" constant="8" id="VrL-X1-eEm"/>
                                                 <constraint firstAttribute="bottom" secondItem="mBR-Ow-EAQ" secondAttribute="bottom" id="aIG-eM-MbO"/>
                                                 <constraint firstItem="q1e-WL-PUt" firstAttribute="top" secondItem="XBv-3l-kxD" secondAttribute="top" constant="8" id="asd-Ps-JiE"/>
                                                 <constraint firstItem="wx2-4G-67s" firstAttribute="top" secondItem="q1e-WL-PUt" secondAttribute="bottom" constant="8" id="azQ-RZ-d47"/>
                                                 <constraint firstItem="mBR-Ow-EAQ" firstAttribute="leading" secondItem="XBv-3l-kxD" secondAttribute="leading" constant="20" symbolic="YES" id="nDw-Ga-WfY"/>
-                                                <constraint firstItem="8FD-y4-lNw" firstAttribute="leading" secondItem="wx2-4G-67s" secondAttribute="trailing" id="sWJ-tF-W6L"/>
+                                                <constraint firstItem="8FD-y4-lNw" firstAttribute="leading" secondItem="wx2-4G-67s" secondAttribute="trailing" constant="8" id="sWJ-tF-W6L"/>
                                                 <constraint firstItem="mBR-Ow-EAQ" firstAttribute="top" secondItem="XBv-3l-kxD" secondAttribute="top" id="uMg-La-saJ"/>
                                                 <constraint firstItem="wx2-4G-67s" firstAttribute="leading" secondItem="mBR-Ow-EAQ" secondAttribute="trailing" constant="8" symbolic="YES" id="wWh-oq-uQ0"/>
                                                 <constraint firstAttribute="bottom" secondItem="8FD-y4-lNw" secondAttribute="bottom" id="zoW-vw-h0n"/>
@@ -399,7 +401,9 @@
                             <constraint firstItem="Ldf-Uc-b7Y" firstAttribute="top" secondItem="HNZ-dd-sBZ" secondAttribute="top" id="xCs-U5-lad"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" id="UCq-3P-7d6"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="fetchingActivityIndicator" destination="Dtr-sg-pGQ" id="HG0-85-Tw7"/>
                         <outlet property="fetchingIndicatorView" destination="wl5-ZH-KAw" id="OZ6-F9-1pv"/>
@@ -485,9 +489,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="empty_star_30px" width="30" height="30"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
