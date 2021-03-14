@@ -12,6 +12,7 @@ class NewsFeedCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var imageViewActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var addFavoriteButton: UIButton!
     
     @IBAction func addFavoriteButton(_ sender: UIButton) {
         let favoriteManager = FavoriteManager()
@@ -23,6 +24,11 @@ class NewsFeedCell: UITableViewCell {
     
     func configureCell(newsList: [APINewsFeedData], cell: NewsFeedCell, indexRow: Int) {
         let newsCell = newsList[indexRow]
+        let favoriteManager = FavoriteManager()
+        let active = favoriteManager.isFavoriteNewsAdded(title: newsCell.title)
+        changeButtonImage(sender: addFavoriteButton, active: active)
+        
+        
         titleLabel.text = newsCell.title
         descriptionLabel.text = newsCell.description
         newsFeedImageView.image = nil

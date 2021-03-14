@@ -37,4 +37,19 @@ struct FavoriteManager {
         return false
     }
     
+    func isFavoriteNewsAdded(title: String?) -> Bool {
+        let key = "arrayFavoriteNews"
+        let defaults = UserDefaults.standard
+        let favoriteNews = defaults.object(forKey: key) as? [String] ?? [String]()
+        
+        if let newsTitle = title {
+            for i in favoriteNews.indices {
+                if newsTitle == favoriteNews[i] {
+                    return true
+                }
+            }
+        }
+        return false
+    }
+    
 }

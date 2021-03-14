@@ -271,6 +271,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addFavoriteButton" destination="BaC-ln-ZwK" id="dxZ-BT-cCK"/>
                         <outlet property="newsDetailsWebView" destination="hU8-MY-bvP" id="JXF-rj-tjP"/>
                     </connections>
                 </viewController>
@@ -379,6 +380,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="addFavoriteButton" destination="8FD-y4-lNw" id="eup-K2-OsE"/>
                                             <outlet property="descriptionLabel" destination="wx2-4G-67s" id="O0n-Pv-edv"/>
                                             <outlet property="imageViewActivityIndicator" destination="g6U-W7-Xge" id="S1Z-Yn-dAM"/>
                                             <outlet property="newsFeedImageView" destination="mBR-Ow-EAQ" id="uRi-mR-0F5"/>
