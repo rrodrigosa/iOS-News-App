@@ -10,8 +10,10 @@ import WebKit
 
 class NewsDetailsViewController: UIViewController, WKUIDelegate {
     @IBOutlet weak var newsDetailsWebView: WKWebView!
+    @IBOutlet weak var addFavoriteButton: UIBarButtonItem!
     var newsUrl: URL?
     var newsTitle: String?
+    var isFavoriteNews: Bool?
     
     override func loadView() {
         let webConfiguration = WKWebViewConfiguration()
@@ -25,6 +27,12 @@ class NewsDetailsViewController: UIViewController, WKUIDelegate {
         let myURL = newsUrl
         let myRequest = URLRequest(url: myURL!)
         newsDetailsWebView.load(myRequest)
+        
+        if let isFavoriteNews = isFavoriteNews {
+            if isFavoriteNews {
+                changeButtonImage(sender: addFavoriteButton, active: isFavoriteNews)
+            }
+        }
     }
     
     @IBAction func addFavoriteButton(_ sender: UIBarButtonItem) {

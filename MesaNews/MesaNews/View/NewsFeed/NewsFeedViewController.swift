@@ -12,9 +12,11 @@ protocol NewsFeedViewProtocol: class {
     func populateTable(newsList: [APINewsFeedData])
     func addTableRows(newsList: [APINewsFeedData], indexPathsToReload: [IndexPath])
     func requestFetch()
+    func isFavoriteNewsResult(result: Bool)
 }
 
 class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
+    private var isFavoriteNews: Bool?
     private var newsList: [APINewsFeedData] = []
     private var filteredNewsList: [APINewsFeedData] = []
     var presenter: NewsFeedPresenter?
@@ -55,8 +57,17 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
             if let unwrappedSelectedRow = indexPath?.row {
                 destination.newsUrl = newsList[unwrappedSelectedRow].url
                 destination.newsTitle = newsList[unwrappedSelectedRow].title
+                presenter?.isFavoriteNews(title: destination.newsTitle)
+                
+                if let isFavoriteNews = isFavoriteNews {
+                    destination.isFavoriteNews = isFavoriteNews
+                }
             }
         }
+    }
+    
+    func isFavoriteNewsResult(result: Bool) {
+        isFavoriteNews = result
     }
     
     func requestFetch() {

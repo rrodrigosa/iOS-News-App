@@ -11,6 +11,7 @@ protocol NewsFeedPresenterProtocol {
     init(view: NewsFeedViewProtocol)
     func newsFeedRequest(authToken: String)
     func checkIfNeedsNewsFetch(indexPaths: [IndexPath])
+    func isFavoriteNews(title: String?)
 }
 
 class NewsFeedPresenter: NewsFeedPresenterProtocol {
@@ -87,6 +88,12 @@ class NewsFeedPresenter: NewsFeedPresenterProtocol {
     
     func isLastCell(indexPath: IndexPath) -> Bool {
         return indexPath.row >= newsList.count - 1
+    }
+    
+    func isFavoriteNews(title: String?) {
+        let favoriteManager = FavoriteManager()
+        let active = favoriteManager.isFavoriteNewsAdded(title: title)
+        view.isFavoriteNewsResult(result: active)
     }
     
 }
