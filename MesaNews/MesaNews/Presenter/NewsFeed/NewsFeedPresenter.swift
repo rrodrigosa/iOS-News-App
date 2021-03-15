@@ -10,7 +10,7 @@ import Foundation
 protocol NewsFeedPresenterProtocol {
     init(view: NewsFeedViewProtocol)
     func newsFeedRequest(authToken: String)
-    func checkIfNeedsNewsFetch(indexPaths: [IndexPath])
+    func newsFeedFetch(indexPaths: [IndexPath], authToken: String)
     func isFavoriteNews(title: String?)
 }
 
@@ -80,9 +80,9 @@ class NewsFeedPresenter: NewsFeedPresenterProtocol {
         return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
     }
     
-    func checkIfNeedsNewsFetch(indexPaths: [IndexPath]) {
+    func newsFeedFetch(indexPaths: [IndexPath], authToken: String) {
         if indexPaths.contains(where: isLastCell) {
-            self.view.requestFetch()
+            newsFeedRequest(authToken: authToken)
         }
     }
     

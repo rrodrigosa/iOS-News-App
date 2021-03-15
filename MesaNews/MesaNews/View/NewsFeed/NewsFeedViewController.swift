@@ -11,7 +11,6 @@ protocol NewsFeedViewProtocol: class {
     func createAlert(message: String)
     func populateTable(newsList: [APINewsFeedData])
     func addTableRows(newsList: [APINewsFeedData], indexPathsToReload: [IndexPath])
-    func requestFetch()
     func isFavoriteNewsResult(result: Bool)
 }
 
@@ -43,7 +42,7 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
     }
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        presenter?.checkIfNeedsNewsFetch(indexPaths: indexPaths)
+        presenter?.newsFeedFetch(indexPaths: indexPaths, authToken: authToken)
     }
     
     // MARK: - Navigation
@@ -68,10 +67,6 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
     
     func isFavoriteNewsResult(result: Bool) {
         isFavoriteNews = result
-    }
-    
-    func requestFetch() {
-        presenter?.newsFeedRequest(authToken: authToken)
     }
     
     // MARK: - Helpers
