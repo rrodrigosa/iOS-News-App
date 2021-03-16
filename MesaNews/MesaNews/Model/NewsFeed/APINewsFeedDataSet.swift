@@ -41,6 +41,7 @@ struct APINewsFeedData: Codable {
     let imageUrl: URL?
     
     var publishDate: Date?
+    var isFavorited = false
     
     enum CodingKeys: String, CodingKey {
         case title = "title"
