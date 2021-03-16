@@ -12,6 +12,8 @@ protocol NewsFeedViewProtocol: class {
     func populateTable(newsList: [APINewsFeedData])
     func addTableRows(newsList: [APINewsFeedData], indexPathsToReload: [IndexPath])
     func isFavoriteNewsResult(result: Bool)
+    func receiveUpdatedNewsList(newsList: [APINewsFeedData])
+    func updateCell(indexPath: IndexPath)
 }
 
 class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
@@ -21,6 +23,7 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
     var presenter: NewsFeedPresenter?
     var authToken = ""
     let newsDetailsIdentifier = "NewsDetailsIdentifier"
+    var indexPathTest: IndexPath?
     
     @IBOutlet weak var fetchingIndicatorView: UIView!
     @IBOutlet weak var fetchingActivityIndicator: UIActivityIndicatorView!
@@ -30,6 +33,24 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
         configureViewDidLoad()
     }
     
+    func receiveUpdatedNewsList(newsList: [APINewsFeedData]) {
+        self.newsList = newsList
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let indexPathTest = indexPathTest {
+            updateCell(indexPath: indexPathTest)
+        }
+    }
+    
+    func updateCell(indexPath: IndexPath) {
+        var indexPathList = [IndexPath]()
+        indexPathList.append(indexPath)
+        newsFeedTableView.beginUpdates()
+        newsFeedTableView.reloadRows(at: indexPathList, with: .automatic)
+        newsFeedTableView.endUpdates()
+    }
+    
     // MARK: - Table view data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return newsList.count
@@ -37,7 +58,7 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NewsFeedCell", for: indexPath) as! NewsFeedCell
-        cell.configureCell(newsList: newsList, cell: cell, indexRow: indexPath.row)
+        cell.configureCell(newsList: newsList, cell: cell, indexRow: indexPath.row, indexPath: indexPath, presenter: presenter)
         return cell
     }
     
@@ -53,14 +74,11 @@ class NewsFeedViewController: UIViewController, NewsFeedViewProtocol, UITableVie
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if  segue.identifier == newsDetailsIdentifier, let destination = segue.destination as? NewsDetailsViewController {
             let indexPath = sender as? IndexPath
+            indexPathTest = indexPath
             if let unwrappedSelectedRow = indexPath?.row {
                 destination.newsUrl = newsList[unwrappedSelectedRow].url
                 destination.newsTitle = newsList[unwrappedSelectedRow].title
-                presenter?.isFavoriteNews(title: destination.newsTitle)
-                
-                if let isFavoriteNews = isFavoriteNews {
-                    destination.isFavoriteNews = isFavoriteNews
-                }
+                destination.isFavoriteNews = newsList[unwrappedSelectedRow].isFavorited
             }
         }
     }

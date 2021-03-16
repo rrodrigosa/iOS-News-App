@@ -14,15 +14,23 @@ class NewsFeedCell: UITableViewCell {
     @IBOutlet weak var imageViewActivityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var addFavoriteButton: UIButton!
     
+    let newsFeedImageManager = NewsFeedImageManager()
+    var presenter: NewsFeedPresenter?
+    var indexPath: IndexPath?
+    
     @IBAction func addFavoriteButton(_ sender: UIButton) {
         let favoriteManager = FavoriteManager()
         let active = favoriteManager.favoriteNews(title: titleLabel.text)
         changeButtonImage(sender: sender, active: active)
+        
+        if let indexPath = indexPath {
+            presenter?.updateNewsList(indexRow: indexPath.row, active: active)
+        }
     }
     
-    let newsFeedImageManager = NewsFeedImageManager()
-    
-    func configureCell(newsList: [APINewsFeedData], cell: NewsFeedCell, indexRow: Int) {
+    func configureCell(newsList: [APINewsFeedData], cell: NewsFeedCell, indexRow: Int, indexPath: IndexPath, presenter: NewsFeedPresenter?) {
+        self.presenter = presenter
+        self.indexPath = indexPath
         let newsCell = newsList[indexRow]
         let favoriteManager = FavoriteManager()
         let active = favoriteManager.isFavoriteNewsAdded(title: newsCell.title)

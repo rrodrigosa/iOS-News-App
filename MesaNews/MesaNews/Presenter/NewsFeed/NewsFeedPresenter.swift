@@ -12,6 +12,8 @@ protocol NewsFeedPresenterProtocol {
     func newsFeedRequest(authToken: String)
     func newsFeedFetch(indexPaths: [IndexPath], authToken: String)
     func isFavoriteNews(title: String?)
+    func updateNewsList(indexRow: Int, active: Bool)
+    func updateCell(indexPath: IndexPath)
 }
 
 class NewsFeedPresenter: NewsFeedPresenterProtocol {
@@ -38,6 +40,7 @@ class NewsFeedPresenter: NewsFeedPresenterProtocol {
             }
             self.currentPage += 1
             self.newsList.append(contentsOf: data)
+            self.updateFavoriteValues()
             self.convertDate()
             self.sortByDate()
             
@@ -94,6 +97,27 @@ class NewsFeedPresenter: NewsFeedPresenterProtocol {
         let favoriteManager = FavoriteManager()
         let active = favoriteManager.isFavoriteNewsAdded(title: title)
         view.isFavoriteNewsResult(result: active)
+    }
+    
+    private func updateFavoriteValues() {
+        let favoriteManager = FavoriteManager()
+        var active: Bool
+        for i in newsList.indices {
+            if !newsList[i].isFavorited {
+                active = favoriteManager.isFavoriteNewsAdded(title: newsList[i].title)
+                if active {
+                    newsList[i].isFavorited = true
+                }
+            }
+        }
+    }
+    
+    func updateNewsList(indexRow: Int, active: Bool) {
+        newsList[indexRow].isFavorited = active
+        view.receiveUpdatedNewsList(newsList: newsList)
+    }
+    func updateCell(indexPath: IndexPath) {
+        view.updateCell(indexPath: indexPath)
     }
     
 }
